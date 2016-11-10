@@ -35,6 +35,22 @@ function seLeitorNaoProibeNotificacoes() {
 	return resultado;
 }
 
+function escreveSeLeitorPermitiuNotificacaoNoSeguroOGlobo() { 
+	if (window.navigator != null) { console.log('window.navigator',window.navigator);
+		if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined') {console.log('navigator.serviceWorker',navigator.serviceWorker);
+			navigator.serviceWorker.ready.then(function(reg) { console.log('reg',reg);
+				if (Notification.permission == 'granted') { console.log('Notification.permission',Notification.permission);
+					if (reg.scope == 'https://nistrador.github.io/') {
+						document.write('true');
+						console.log('O domínio aqui eh:',reg.scope);
+						
+					}
+				}
+			});
+		}		
+	}
+}
+	  
 function seLeitorPermitiuNotificacaoNoSeguroOGlobo() { 
 	var resultado = false;
 	if (window.navigator != null) { console.log('window.navigator',window.navigator);
@@ -60,7 +76,7 @@ function seLeitorPermitiuNotificacaoNoSeguroOGlobo() {
 <h3><p align="center">Clique para permitir a ativação do serviço de notificação de conteúdo.</p></h3>
 </td></tr>
 <tr>
-	<td><script>document.write(seLeitorPermitiuNotificacaoNoSeguroOGlobo());</script></td>
+	<td><script>escreveSeLeitorPermitiuNotificacaoNoSeguroOGlobo();</script></td>
 </tr>
 </table>
 
