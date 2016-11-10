@@ -57,11 +57,10 @@ function seLeitorPermitiuNotificacaoNoSeguroOGlobo() {
 		if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined') {console.log('navigator.serviceWorker',navigator.serviceWorker);
 			
 			if (Notification.permission == 'granted') { console.log('Notification.permission',Notification.permission);
-				if (reg.scope == 'https://nistrador.github.io/') {
+				
 					resultado = true;
-					console.log('O domínio aqui eh:',reg.scope);
 					console.log('1',resultado);
-				}
+				
 			}
 			
 		}		
