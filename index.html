@@ -37,13 +37,11 @@ function seLeitorNaoProibeNotificacoes() {
 
 function seLeitorPermitiuNotificacaoNoSeguroOGlobo() {
 	var resultado = false;
-	if (window.navigator != null){
-		if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined'){
-			
+	if (window.navigator != null) {
+		if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined') {
 			navigator.serviceWorker.ready.then(function(reg) {
-				
-				if (Notification.permission == 'granted'){
-					if (reg.scope == 'https://seguro.oglobo.com.br/'){
+				if (Notification.permission == 'granted') {
+					if (reg.scope == 'https://seguro.oglobo.com.br/') {
 						resultado = true;
 						console.log('O domínio aqui eh:',reg.scope);
 					}
@@ -52,6 +50,7 @@ function seLeitorPermitiuNotificacaoNoSeguroOGlobo() {
 	
 		}		
 	}
+	return resultado;
 }
 function leitorTemInscricaoNotificacao() {
 	var resultado = false;
