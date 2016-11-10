@@ -47,14 +47,18 @@ function seLeitorPermitiuNotificacaoNoSeguroOGlobo() {
 }
 
   </script>
+	
+	
   <table width="100%" height="600">
 <tr><td>
 <h3><p align="center">Clique para permitir a ativação do serviço de notificação de conteúdo.</p></h3>
 </td></tr>
 <tr>
-	<td><div id="permissao"><script>document.write(seLeitorPermitiuNotificacaoNoSeguroOGlobo());</script></div></td>
+	<td><div id="permissao"></div></td>
 </tr>
 </table>
-
+	<script>
+	$('#permissao').append(seLeitorPermitiuNotificacaoNoSeguroOGlobo());
+	</script>
 </body>
 </html>
