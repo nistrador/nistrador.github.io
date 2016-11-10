@@ -55,15 +55,15 @@ function seLeitorPermitiuNotificacaoNoSeguroOGlobo() {
 	var resultado = false;
 	if (window.navigator != null) { console.log('window.navigator',window.navigator);
 		if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined') {console.log('navigator.serviceWorker',navigator.serviceWorker);
-			navigator.serviceWorker.ready.then(function(reg) { console.log('reg',reg);
-				if (Notification.permission == 'granted') { console.log('Notification.permission',Notification.permission);
-					if (reg.scope == 'https://nistrador.github.io/') {
-						resultado = true;
-						console.log('O domínio aqui eh:',reg.scope);
-						console.log('1',resultado);
-					}
+			
+			if (Notification.permission == 'granted') { console.log('Notification.permission',Notification.permission);
+				if (reg.scope == 'https://nistrador.github.io/') {
+					resultado = true;
+					console.log('O domínio aqui eh:',reg.scope);
+					console.log('1',resultado);
 				}
-			});
+			}
+			
 		}		
 	}
 	console.log('2',resultado);
