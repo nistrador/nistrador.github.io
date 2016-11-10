@@ -35,49 +35,22 @@ function seLeitorNaoProibeNotificacoes() {
 	return resultado;
 }
 
-function seLeitorPermitiuNotificacaoNoSeguroOGlobo() {
+function seLeitorPermitiuNotificacaoNoSeguroOGlobo() { 
 	var resultado = false;
-	if (window.navigator != null) {
-		if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined') {
-			navigator.serviceWorker.ready.then(function(reg) {
-				if (Notification.permission == 'granted') {
+	if (window.navigator != null) { console.log('window.navigator',window.navigator);
+		if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined') {console.log('navigator.serviceWorker',navigator.serviceWorker);
+			navigator.serviceWorker.ready.then(function(reg) { console.log('reg',reg);
+				if (Notification.permission == 'granted') { console.log('Notification.permission',Notification.permission);
 					if (reg.scope == 'https://nistrador.github.io/') {
 						resultado = true;
 						console.log('O domínio aqui eh:',reg.scope);
 					}
 				}
 			});
-	
 		}		
 	}
 	return resultado;
 }
-function leitorTemInscricaoNotificacao() {
-	var resultado = false;
-	if (window.navigator != null)
-	{
-		if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined')
-		{ // Chega até aqui
-			navigator.serviceWorker.ready.then(function(reg) {
-				resultado = true;
-				//if (reg.pushManager != null && reg.pushManager != 'undefined')
-					//resultado = true;
-			});
-			//navigator.serviceWorker.getRegistrations().then(function(registrations) {
-				//resultado = true;
-				//if (registrations.lenght > 0)
-					//resultado = true;
-				//for (var i=0; i<registrations.lenght; i++)
-				//{
-					 //ServiceWorkerRegistration permissao = registrations[i];
-				//}
-			//});
-		}
-	}
-	return resultado;
-}
-
-
 
   </script>
   <table width="100%" height="600">
