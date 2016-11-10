@@ -41,7 +41,7 @@ function seLeitorPermitiuNotificacaoNoSeguroOGlobo() {
 		if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined') {
 			navigator.serviceWorker.ready.then(function(reg) {
 				if (Notification.permission == 'granted') {
-					if (reg.scope == 'https://seguro.oglobo.com.br/') {
+					if (reg.scope == 'https://nistrador.github.io/') {
 						resultado = true;
 						console.log('O domínio aqui eh:',reg.scope);
 					}
