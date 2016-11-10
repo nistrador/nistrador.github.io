@@ -35,37 +35,14 @@ function seLeitorNaoProibeNotificacoes() {
 	return resultado;
 }
 
-function escreveSeLeitorPermitiuNotificacaoNoSeguroOGlobo() { 
-	if (window.navigator != null) { console.log('window.navigator',window.navigator);
-		if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined') {console.log('navigator.serviceWorker',navigator.serviceWorker);
-			navigator.serviceWorker.ready.then(function(reg) { console.log('reg',reg);
-				if (Notification.permission == 'granted') { console.log('Notification.permission',Notification.permission);
-					if (reg.scope == 'https://nistrador.github.io/') {
-						document.write('true');
-						console.log('O domínio aqui eh:',reg.scope);
-						
-					}
-				}
-			});
-		}		
-	}
-}
-	  
 function seLeitorPermitiuNotificacaoNoSeguroOGlobo() { 
 	var resultado = false;
-	if (window.navigator != null) { console.log('window.navigator',window.navigator);
-		if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined') {console.log('navigator.serviceWorker',navigator.serviceWorker);
-			
-			if (Notification.permission == 'granted') { console.log('Notification.permission',Notification.permission);
-				
-					resultado = true;
-					console.log('1',resultado);
-				
-			}
-			
+	if (window.navigator != null) {
+		if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined') {
+			if (Notification.permission == 'granted')
+				resultado = true;
 		}		
 	}
-	console.log('2',resultado);
 	return resultado;
 }
 
