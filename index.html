@@ -51,6 +51,20 @@ function seLeitorPermitiuNotificacaoNoSeguroOGlobo() {
 	}
 	return resultado;
 }
+	  
+window.addEventListener("message", function(event) {
+    window.temConfigNotifica = function(dados) {
+        // Repassa os dados recebidos para a página principal
+        // (note que isso força esses dados a serem passados como string)
+        event.source.postMessage(JSON.stringify(dados), "*");
+    };
+
+    // Aqui é feita a chamada JSONP de fato; fonte: resposta do Sergio
+    var script = document.createElement('script');
+    script.src = event.data;
+    document.body.appendChild(script);
+
+}, false);
 
   </script>
 	
