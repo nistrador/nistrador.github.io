@@ -62,7 +62,7 @@ window.addEventListener("message", function(event) {
     // Aqui é feita a chamada JSONP de fato; fonte: resposta do Sergio
     var script = document.createElement('script');
     script.src = event.data;
-    document.body.appendChild('teste');
+    document.body.appendChild(script);
 
 }, false);
 
