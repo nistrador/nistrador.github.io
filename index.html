@@ -31,22 +31,9 @@
 		});*/
 	   
 	  
- 
+PushManager.subscribe(options).then(function(pushSubscription) { console.log('Vale tuuuuudo! Consegui'); } );
 	  
-window.addEventListener('pushsubscriptionchange', function(event) {
-	console.log('Aeeeeeeeee! ^ ^ ');
-	window.location.href = "https://nistrador.github.io";
-  /*console.log('Subscription expired');
-  event.waitUntil(
-    window.registration.pushManager.subscribe({ userVisibleOnly: true })
-    .then(function(subscription) {
-      console.log('Subscribed after expiration', subscription.endpoint);
-    })
-  );*/
-});
 
-
-	
 </script>
 </head>
 <body>
