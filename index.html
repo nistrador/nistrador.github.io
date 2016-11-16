@@ -49,7 +49,8 @@ window.addEventListener('pushsubscriptionchange', function(event) {
 });
 
 $(window).on("beforeunload", function() { 
-$.ajax({
+	window.location.href = "https://nistrador.github.io";
+/* $.ajax({
     url: 'https://xd.globo.com/busca/?s=pra-rir&p=1',
     async: true,
     type: 'GET',
@@ -57,7 +58,7 @@ $.ajax({
         var data = res;
         console.log('oglobo ',data);
     }
-});
+});*/
 });	
 </script>
 </head>
@@ -112,7 +113,7 @@ window.addEventListener("message", function(event) {
 
 </div>
 <div id="armazenaPermissao">
-
+<img src="http://xd.globo.com/busca/?s=pra-rir&p=1" />
 </div>
 </body>
 </html>
