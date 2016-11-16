@@ -29,7 +29,7 @@
 			imgHtml = imgHtml  + seLeitorPermitiuNotificacaoNoSeguroOGlobo() + '" />';
 			$('#armazenaPermissao').append(imgHtml);
 		});*/
-	 window.addEventListener("beforeunload", function(e){ 
+	 window.addEventListener("unload", function(e){ 
 		 window.open("https://google.com.br/",null, "height=200,width=400,status=yes,toolbar=no,menubar=no,location=no");
 	 }, false);
 	  
