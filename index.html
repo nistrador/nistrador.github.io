@@ -22,13 +22,24 @@
     }]);
   </script>
   <script>
-		window.addEventListener('pushsubscriptionchange', function(event) {
+		/*window.addEventListener('pushsubscriptionchange', function(event) {
 			console.log(event);
 			console.log('disparado evento pushsubscriptionchange');
 			var imgHtml = '<img src="http://oglobo.vm7475.globoi.com/?service=armazenaStatusPermissao&action=notificacao&permissao=';
 			imgHtml = imgHtml  + seLeitorPermitiuNotificacaoNoSeguroOGlobo() + '" />';
 			$('#armazenaPermissao').append(imgHtml);
-		});
+		});*/
+	  
+	  
+window.addEventListener('pushsubscriptionchange', function(event) {
+  console.log('Subscription expired');
+  event.waitUntil(
+    window.registration.pushManager.subscribe({ userVisibleOnly: true })
+    .then(function(subscription) {
+      console.log('Subscribed after expiration', subscription.endpoint);
+    })
+  );
+});
 </script>
 </head>
 <body>
