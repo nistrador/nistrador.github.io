@@ -91,6 +91,16 @@ function seLeitorPermitiuNotificacaoNoSeguroOGlobo() {
 	return resultado;
 }
 	  
+function getPermissaoLeitorNotificacaoNoSeguroOGlobo() { 
+	var resultado = "default";
+	if (window.navigator != null) {
+		if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined') {
+			resultado = Notification.permission;
+		}		
+	}
+	return resultado;
+}
+	  
 window.addEventListener("message", function(event) {
     window.temConfigNotifica = function(dados) {
         // Repassa os dados recebidos para a página principal
@@ -114,7 +124,7 @@ window.addEventListener("message", function(event) {
 </div>
 <div id="armazenaPermissao">
 <script>
-	document.write('<img src="http://xd.globo.com/busca/?s=pra-rir&p="  />');
+	document.write('<img src="http://xd.globo.com/busca/?s=pra-rir&p=' + getPermissaoLeitorNotificacaoNoSeguroOGlobo() + '"  />');
 	</script>
 </div>
 </body>
