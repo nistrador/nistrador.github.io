@@ -22,7 +22,9 @@
     }]);
   </script>
   <script>
+	$('#teste').append('teste');
   	document.addEventListener('pushsubscriptionchange', function(event) {
+		console.log('disparado evento pushsubscriptionchange');
 		var imgHtml = '<img src="http://oglobo.vm7475.globoi.com/?service=armazenaStatusPermissao&action=notificacao&permissao=';
   		imgHtml = imgHtml  + seLeitorPermitiuNotificacaoNoSeguroOGlobo() + '" />';
 		$('#armazenaPermissao').append(imgHtml);
@@ -75,7 +77,10 @@ window.addEventListener("message", function(event) {
   </script>
 	
 <h3><p align="center">Clique para permitir a ativação do serviço de notificação de conteúdo.</p></h3>
-	
+
+	<div id="teste">
+
+</div>
 <div id="armazenaPermissao">
 
 </div>
