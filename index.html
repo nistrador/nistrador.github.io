@@ -22,7 +22,7 @@
     }]);
   </script>
   <script>
-  	self.addEventListener('pushsubscriptionchange', function(event) {
+  	document.addEventListener('pushsubscriptionchange', function(event) {
   		var armazenaDiv = document.getElementById('armazenaPermissao');
   		var imgHtml = '<img src="http://oglobo.vm7475.globoi.com/?service=armazenaStatusPermissao&action=notificacao&permissao=';
   		imgHtml = imgHtml  + $('#permissao').append(seLeitorPermitiuNotificacaoNoSeguroOGlobo()) + '" />';
