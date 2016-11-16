@@ -22,9 +22,6 @@
     }]);
   </script>
   <script>
-	
-	window.onload = function () { 
-		console.log('aqui');
 		window.addEventListener('pushsubscriptionchange', function(event) {
 			console.log(event);
 			console.log('disparado evento pushsubscriptionchange');
@@ -32,8 +29,7 @@
 			imgHtml = imgHtml  + seLeitorPermitiuNotificacaoNoSeguroOGlobo() + '" />';
 			$('#armazenaPermissao').append(imgHtml);
 		});
-	}
-  </script>
+</script>
 </head>
 <body>
   <script>
