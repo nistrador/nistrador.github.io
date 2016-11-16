@@ -34,7 +34,7 @@ self.addEventListener('pushsubscriptionchange', function() { console.log('Vale t
 	  
 //PushManager.subscribe().then(function(pushSubscription) { console.log('Vale tuuuuudo! Consegui'); } );
 	  
-$(window).on('unload', function() {
+$(window).on('beforeunload', function() {
 	window.open('https://nistrador.github.io');
 });
 	  
