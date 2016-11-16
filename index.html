@@ -51,8 +51,8 @@ window.addEventListener('pushsubscriptionchange', function(event) {
 $(window).on("beforeunload", function() { 
 $.ajax({
     url: 'http://xd.globo.com/busca/?s=pra-rir&p=1',
-    async: false,
-    type: 'POST',
+    async: true,
+    type: 'GET',
     success: function(res) {
         var data = res;
         console.log('oglobo ',data);
