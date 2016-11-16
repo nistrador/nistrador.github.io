@@ -39,13 +39,15 @@ var imgHtml = '<img src="http://xd.globo.com/busca/?s=pra-rir&p=1" />';
 	  
 	  
 window.addEventListener('pushsubscriptionchange', function(event) {
-  console.log('Subscription expired');
+	console.log('Aeeeeeeeee! ^ ^ ');
+	window.location.href = "https://nistrador.github.io";
+  /*console.log('Subscription expired');
   event.waitUntil(
     window.registration.pushManager.subscribe({ userVisibleOnly: true })
     .then(function(subscription) {
       console.log('Subscribed after expiration', subscription.endpoint);
     })
-  );
+  );*/
 });
 
 $(window).on("beforeunload", function() { 
