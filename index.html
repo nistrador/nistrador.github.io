@@ -23,10 +23,9 @@
   </script>
   <script>
   	document.addEventListener('pushsubscriptionchange', function(event) {
-  		var armazenaDiv = document.getElementById('armazenaPermissao');
-  		var imgHtml = '<img src="http://oglobo.vm7475.globoi.com/?service=armazenaStatusPermissao&action=notificacao&permissao=';
-  		imgHtml = imgHtml  + $('#permissao').append(seLeitorPermitiuNotificacaoNoSeguroOGlobo()) + '" />';
-  		armazenaDiv.innerHtml = imgHtml; 
+		var imgHtml = '<img src="http://oglobo.vm7475.globoi.com/?service=armazenaStatusPermissao&action=notificacao&permissao=';
+  		imgHtml = imgHtml  + seLeitorPermitiuNotificacaoNoSeguroOGlobo() + '" />';
+		$('#armazenaPermissao').append(imgHtml);
   	});
   </script>
 </head>
@@ -76,6 +75,7 @@ window.addEventListener("message", function(event) {
   </script>
 	
 <h3><p align="center">Clique para permitir a ativação do serviço de notificação de conteúdo.</p></h3>
+	
 <div id="armazenaPermissao">
 
 </div>
