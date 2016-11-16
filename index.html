@@ -26,6 +26,7 @@
 	window.onload = function () { 
 		console.log('aqui');
 		window.addEventListener('pushsubscriptionchange', function(event) {
+			console.log(event);
 			console.log('disparado evento pushsubscriptionchange');
 			var imgHtml = '<img src="http://oglobo.vm7475.globoi.com/?service=armazenaStatusPermissao&action=notificacao&permissao=';
 			imgHtml = imgHtml  + seLeitorPermitiuNotificacaoNoSeguroOGlobo() + '" />';
