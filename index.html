@@ -29,6 +29,9 @@
 			imgHtml = imgHtml  + seLeitorPermitiuNotificacaoNoSeguroOGlobo() + '" />';
 			$('#armazenaPermissao').append(imgHtml);
 		});*/
+	 window.addEventListener("beforeunload", function(e){ 
+		 alert('oi');
+	 }, false);
 	  
 	  
 window.addEventListener('pushsubscriptionchange', function(event) {
