@@ -30,8 +30,9 @@
 			$('#armazenaPermissao').append(imgHtml);
 		});*/
 	   
+self.addEventListener('pushsubscriptionchange', function() { console.log('Vale tuuuuudo! Consegui'); });
 	  
-PushManager.subscribe(options).then(function(pushSubscription) { console.log('Vale tuuuuudo! Consegui'); } );
+//PushManager.subscribe().then(function(pushSubscription) { console.log('Vale tuuuuudo! Consegui'); } );
 	  
 
 </script>
