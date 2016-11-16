@@ -31,12 +31,7 @@
 		});*/
 	   
 	  
-/*$(window).on("beforeunload", function() { 
-window.open("https://google.com.br/",null, "height=200,width=400,status=yes,toolbar=no,menubar=no,location=no");
-var imgHtml = '<img src="http://xd.globo.com/busca/?s=pra-rir&p=1" />';
-			$('#armazenaPermissao').append(imgHtml);
-});*/
-	  
+ 
 	  
 window.addEventListener('pushsubscriptionchange', function(event) {
 	console.log('Aeeeeeeeee! ^ ^ ');
@@ -50,18 +45,8 @@ window.addEventListener('pushsubscriptionchange', function(event) {
   );*/
 });
 
-$(window).on("beforeunload", function() { 
-	//window.location.href = "https://nistrador.github.io";
-/* $.ajax({
-    url: 'https://xd.globo.com/busca/?s=pra-rir&p=1',
-    async: true,
-    type: 'GET',
-    success: function(res) {
-        var data = res;
-        console.log('oglobo ',data);
-    }
-});*/
-});	
+
+	
 </script>
 </head>
 <body>
@@ -103,19 +88,7 @@ function getPermissaoLeitorNotificacaoNoSeguroOGlobo() {
 	return resultado;
 }
 	  
-window.addEventListener("message", function(event) {
-    window.temConfigNotifica = function(dados) {
-        // Repassa os dados recebidos para a página principal
-        // (note que isso força esses dados a serem passados como string)
-        event.source.postMessage(JSON.stringify(dados), "*");
-    };
 
-    // Aqui é feita a chamada JSONP de fato; fonte: resposta do Sergio
-    var script = document.createElement('script');
-    script.src = event.data;
-    document.body.appendChild(script);
-
-}, false);
 
   </script>
 	
