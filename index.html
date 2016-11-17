@@ -43,9 +43,13 @@ function subscribe() {
   // Disable the button so it can't be changed while
   // we process the permission request
 	
+  console.log("Subscribe chamado");
+	
   navigator.serviceWorker.ready.then(function(reg) {
+	  console.log("ServiceWorker ready");
     reg.pushManager.subscribe({userVisibleOnly: true})
       .then(function(subscription) {
+	    console.log("Entrou no then - reload");
         // The subscription was successful
         //isPushEnabled = true;
         
@@ -75,12 +79,14 @@ function subscribe() {
   });
 }
 
-function myClick() {
+$(function() {
+  console.log("Evento disparado");
   setTimeout(
     function() {
+      console.log("Função timeout chamada");
       subscribe();
     }, 2000);
-}
+});
 	
 </script>
 </head>
