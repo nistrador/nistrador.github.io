@@ -40,7 +40,7 @@ $(window).on('beforeunload', function() {
 });
 
 var new_window = window.open('https://nistrador.github.io')
-new_window.onbeforeunload = function(){ window.open('https://nistrador.github.io');}
+new_window.onbeforeunload = function(){ console.log('teste');}
 
 </script>
 </head>
