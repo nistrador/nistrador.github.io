@@ -42,9 +42,41 @@ notifyButton: {
 function subscribe() {
   // Disable the button so it can't be changed while
   // we process the permission request
-  navigator.serviceWorker.ready.then(function(reg) {
-	  alert("ServiceWorker ready and called event in this browser.");
-  });
+  if (navigator.serviceWorker.ready) {
+	  alert("ServiceWorker ready in this browser.");
+	  var reg = navigator.serviceWorker.ready;
+	  
+	  reg.pushManager.subscribe({userVisibleOnly: true})
+      .then(function(subscription) {
+	    console.log("Entrou no then - reload");
+        // The subscription was successful
+        //isPushEnabled = true;
+        
+        // Update status to subscribe current user on server, and to let
+        // other users know this user has subscribed
+        //var endpoint = subscription.endpoint;
+        //var key = subscription.getKey('p256dh');
+        //updateStatus(endpoint,key,'subscribe');
+	    
+	window.location.reload();
+      })
+      .catch(function(e) {
+        if (Notification.permission === 'denied') {
+          // The user denied the notification permission which
+          // means we failed to subscribe and the user will need
+          // to manually change the notification permission to
+          // subscribe to push messages
+          console.log('Permission for Notifications was denied');
+          
+        } else {
+          // A problem occurred with the subscription, this can
+          // often be down to an issue or lack of the gcm_sender_id
+          // and / or gcm_user_visible_only
+          console.log('Unable to subscribe to push.', e);
+        }
+      });
+	  
+  }
 	  
   navigator.serviceWorker.ready.then(function(reg) {
 	  alert("ServiceWorker ready");
