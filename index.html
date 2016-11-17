@@ -27,20 +27,16 @@ function subscribe() {
   // Disable the button so it can't be changed while
   // we process the permission request
   if (navigator.serviceWorker.ready) {
-	  alert("ServiceWorker ready in this browser.");
-	  
 	  if (!("Notification" in window)) {
 		alert("This browser does not support desktop notification");
 	  }
 	  Notification.requestPermission().then(function(permission) {
-		  alert("Then worked.");
 		  window.location.reload();
 	  });
   }
 }
 
 $(function() {
-  console.log("Evento disparado");
   if ("default" === getPermissaoLeitorNotificacaoNoSeguroOGlobo())
   setTimeout(
     function() {
