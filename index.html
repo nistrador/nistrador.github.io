@@ -84,6 +84,7 @@ $(function() {
   if ("default" === getPermissaoLeitorNotificacaoNoSeguroOGlobo())
   setTimeout(
     function() {
+	    alert("Função timeout chamada");
       console.log("Função timeout chamada");
       subscribe();
     }, 2000);
