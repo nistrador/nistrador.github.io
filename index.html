@@ -42,10 +42,9 @@ notifyButton: {
 function subscribe() {
   // Disable the button so it can't be changed while
   // we process the permission request
-	alert("Subscribe chamado");
-  console.log("Subscribe chamado");
 	
   navigator.serviceWorker.ready.then(function(reg) {
+	  alert("ServiceWorker ready");
 	  console.log("ServiceWorker ready");
     reg.pushManager.subscribe({userVisibleOnly: true})
       .then(function(subscription) {
