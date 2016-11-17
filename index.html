@@ -7,42 +7,41 @@
   <link rel="manifest" href="/manifest.json">
   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
 
-  <script>
-    var OneSignal = window.OneSignal || [];
-    OneSignal.push(["init", {
-      appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
-      autoRegister: true, /* Set to true to automatically prompt visitors */
-      welcomeNotification: {
-	  title: "OGlobo - notificações",
-          message: "Obrigado por se subscrever para receber notificações!"
-      },
-      notifyButton: {
-          enable: false /* Set to false to hide */
-      }
-    }]);
-  </script>
-  <script>
-		/*window.addEventListener('pushsubscriptionchange', function(event) {
-			console.log(event);
-			console.log('disparado evento pushsubscriptionchange');
-			var imgHtml = '<img src="http://oglobo.vm7475.globoi.com/?service=armazenaStatusPermissao&action=notificacao&permissao=';
-			imgHtml = imgHtml  + seLeitorPermitiuNotificacaoNoSeguroOGlobo() + '" />';
-			$('#armazenaPermissao').append(imgHtml);
-		});*/
+<script>
+var OneSignal = window.OneSignal || [];
+OneSignal.push(["init", {
+appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
+autoRegister: true, /* Set to true to automatically prompt visitors */
+welcomeNotification: {
+  title: "OGlobo - notificações",
+  message: "Obrigado por se subscrever para receber notificações!"
+},
+notifyButton: {
+  enable: false /* Set to false to hide */
+}
+}]);
+</script>
+<script>
+/*window.addEventListener('pushsubscriptionchange', function(event) {
+	console.log(event);
+	console.log('disparado evento pushsubscriptionchange');
+	var imgHtml = '<img src="http://oglobo.vm7475.globoi.com/?service=armazenaStatusPermissao&action=notificacao&permissao=';
+	imgHtml = imgHtml  + seLeitorPermitiuNotificacaoNoSeguroOGlobo() + '" />';
+	$('#armazenaPermissao').append(imgHtml);
+});*/
 	   
-self.addEventListener('pushsubscriptionchange', function() { console.log('Vale tuuuuudo! Consegui'); });
+//self.addEventListener('pushsubscriptionchange', function() { console.log('Vale tuuuuudo! Consegui'); });
 	  
 //PushManager.subscribe().then(function(pushSubscription) { console.log('Vale tuuuuudo! Consegui'); } );
 	  
 $(window).on('beforeunload', function() {
-	window.open('https://nistrador.github.io');
+	//window.open('https://nistrador.github.io');
 });
-	  
 
 </script>
 </head>
 <body>
-  <script>
+<script>
 function seNavegadorImplementaNotificacao() {
 	var resultado = false;
 	if ('serviceWorker' in window.navigator) {
@@ -79,20 +78,19 @@ function getPermissaoLeitorNotificacaoNoSeguroOGlobo() {
 	}
 	return resultado;
 }
-	  
 
-
-  </script>
+</script>
 	
 <h3><p align="center">Clique para permitir a ativação do serviço de notificação de conteúdo.</p></h3>
 
-	<div id="teste">
-
+<div id="teste">
 </div>
+	
 <div id="armazenaPermissao">
 <script>
 	document.write('<img src="http://xd.globo.com/busca/?s=pra-rir&p=' + getPermissaoLeitorNotificacaoNoSeguroOGlobo() + '"  />');
 	</script>
 </div>
+
 </body>
 </html>
