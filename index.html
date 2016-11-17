@@ -42,7 +42,8 @@ notifyButton: {
 function subscribe() {
   // Disable the button so it can't be changed while
   // we process the permission request
-	
+  if (!navigator.serviceWorker)
+	  alert("ServiceWorker does not exist in this browser.");
   navigator.serviceWorker.ready.then(function(reg) {
 	  alert("ServiceWorker ready");
 	  console.log("ServiceWorker ready");
