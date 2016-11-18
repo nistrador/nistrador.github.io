@@ -1,5 +1,11 @@
-.divIFrame {
+.divIFrameInvisivel {
   height: 100%;
   width: 100%;
   display: none;
+}
+
+.divIFrameVisivel {
+  height: 100%;
+  width: 100%;
+  display: inline;
 }
