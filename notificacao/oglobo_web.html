@@ -2,6 +2,9 @@
 <html>
 <head>
 <title>O Globo Digital - Notificações</title>
+	
+<link rel="stylesheet" type="text/css" href="css/index_oglobo.css">
+	
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script>
 function seNavegadorSuportaNotificacao() {
@@ -31,13 +34,13 @@ $(function() {
 </script>
 </head>
 <body>
-  <div id="divNaoSuporta" style="display:none">
+  <div id="divNaoSuporta" class="divIFrame">
     <p align="center">Notificações não são suportadas no seu navegador.</p>
   </div>
-  <div id="divCadastrar" style="display:none">
+  <div id="divCadastrar" class="divIFrame">
     <iframe src="oglobo_web_cadastrar.html" />
   </div>
-  <div id="divObrigado" style="display:none">
+  <div id="divObrigado" class="divIFrame">
     <iframe src="oglobo_web_obrigado.html" />
   </div>
 </body>
