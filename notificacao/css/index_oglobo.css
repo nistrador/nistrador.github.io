@@ -10,13 +10,13 @@ html, body {
   float:left;
 }
 
-.divIFrameInvisivel {
+div.divIFrameInvisivel {
   height: 100%;
   width: 100%;
   display: none;
 }
 
-.divIFrameVisivel {
+div.divIFrameVisivel {
   height: 100%;
   width: 100%;
 }
