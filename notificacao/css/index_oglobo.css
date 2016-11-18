@@ -1,7 +1,17 @@
 html, body {
   height:100%;
   width: 100%;
-  margin: 0;
+  
+  position:fixed;
+  top:0px; 
+  left:0px; 
+  bottom:0px; 
+  right:0px; 
+  border:none; 
+  margin:0; 
+  padding:0; 
+  overflow:hidden; 
+  z-index:999999;
 }
 
 #sidebar {
