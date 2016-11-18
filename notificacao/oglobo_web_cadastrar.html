@@ -1,0 +1,111 @@
+
+<!doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+
+        <link rel="stylesheet" type="text/css" href="font/fonts-oglobo.css">
+
+        <style type="text/css">
+	        body {
+	        	text-align: center;
+	        	font-family: 'OgloboCondensed', Arial, sans-serif;
+	        	font-weight: normal;
+	        }
+			.bg {
+			    background-image: linear-gradient(#DAE7EF 0%, #A0C3D9 100%);
+			    position: fixed;
+			    top: -16%;
+			    left: -6%;
+			    width: 125%;
+			    height: 425px;
+			    transform: rotate(174deg);
+			    z-index: -1;
+			}
+
+			.comp {
+			    background: transparent url(img/macbook-@2x.png) 0 0 no-repeat;
+			    background-size: 100%;
+			    margin: 146px auto 20px;
+			    width: 300px;
+			    height: 170px;
+			}
+
+			.title {
+			    font-weight: 600;
+			    font-size: 38px;
+			    color: #364352;
+			    line-height: 1;
+			    text-transform: uppercase;
+			    margin-bottom: 10px;
+			}
+
+			.text {
+			    font-size: 24px;
+			    color: #4A4A4A;
+			    line-height: 24px;
+			    font-weight: 300;
+			}
+
+			.notif {
+				position: fixed;
+				top: 75px;
+				right: -360px;
+				height: 106px;
+				width: 336px;
+				overflow: hidden;
+				text-align: left;
+				background-color: #FFF;
+				opacity: 0;
+				-webkit-box-shadow: 0px 0px 130px 2px rgba(0,0,0,0.35);
+				-moz-box-shadow: 0px 0px 130px 2px rgba(0,0,0,0.35);
+				box-shadow: 0px 0px 130px 2px rgba(0,0,0,0.35);
+				-webkit-transition: all ease-in 400ms;
+				-moz-transition: all ease-in 400ms;
+				transition: all ease-in 400ms;
+			}
+			.notif.open {
+				right: 30px;
+				opacity: 1;
+			}
+			.notif img {
+			    float: left;
+			    display: block;
+			    margin: 0 14px 0 0;
+			    width: 106px;
+			}
+			.notif h3 {
+				margin: 6px 6px 6px 0;
+				font-family: Helvetica, Arial, sans-serif;
+				font-size: 14px;
+				color: #5A5A5A;
+			}
+			.notif p {
+				margin: 6px 6px 6px 0;
+				font-family: Helvetica, Arial, sans-serif;
+				font-size: 13px;
+				color: #5A5A5A;
+			}
+        </style>
+        <script type="text/javascript">
+			window.onload = function() {
+				setTimeout(function () {
+					document.querySelector('.notif').className += ' open';
+				}, 900);
+			};
+        </script>
+    </head>
+    <body>
+        <div class="bg"></div>
+        <div class="comp"></div>
+        <div class="title">O Globo quer manter você<br>sempre informado.</div>
+        <div class="text">Ao permitir as notificações do O Globo, você receberá as principais<br>notícias em seu navegador, sempre que surgir algo importante para você!</div>
+        <div class="notif">
+        	<img src="img/img-@2x.png">
+        	<h3>IR: Consulta ao penúltimo lote será aberta na terça feira</h3>
+        	<p>Mais de 2.2 milhões de contribuintes receberão R$ 2,67 bi no próximo dia 16</p>
+        </div>
+    </body>
+</html>
+	
