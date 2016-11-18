@@ -29,3 +29,14 @@ function getPermissaoLeitorNotificacaoNoSeguroOGlobo() {
   }
   return resultado;
 }
+
+function subscrever() {
+  if (navigator.serviceWorker.ready) {
+    if (!("Notification" in window)) {
+      alert("This browser does not support desktop notification");
+    }
+    Notification.requestPermission().then(function(permission) {
+      window.location.reload();
+    });
+  }
+}
