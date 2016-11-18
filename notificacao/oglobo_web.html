@@ -20,15 +20,16 @@ function seLeitorJaConfigurouNotificacoes() {
 
 $(function() {
   if (! seNavegadorSuportaNotificacao()) {
-    document.getElementById("divNaoSuporta").style.className = "divIFrameVisivel";
+    $('#divNaoSuporta').removeClass('divIFrameInvisivel');
+    $('#divNaoSuporta').addClass('divIFrameVisivel');
   }
   else if (seLeitorJaConfigurouNotificacoes()) {
-    //window.location = "oglobo_web_obrigado.html";
-    document.getElementById("divObrigado").style.className = "divIFrameVisivel";
+    $('#divObrigado').removeClass('divIFrameInvisivel');
+    $('#divObrigado').addClass('divIFrameVisivel');
   }
   else {
-    //window.location = "oglobo_web_cadastrar.html";
-    document.getElementById("divCadastrar").style.className = "divIFrameVisivel";
+    $('#divCadastrar').removeClass('divIFrameInvisivel');
+    $('#divCadastrar').addClass('divIFrameVisivel');
   }
 });
 </script>
