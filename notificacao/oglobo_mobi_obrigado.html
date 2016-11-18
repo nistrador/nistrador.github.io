@@ -1,9 +1,135 @@
-<!DOCTYPE html>
+
+<!doctype html>
 <html>
-<head>
-<title>OGlobo - Notificações</title>
-</head>
-<body>
-  <p align="center">Obrigado. Você já cadastrou sua configuração de notificações do Globo em seu navegador.</p>
-</body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+        <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+        <title>O Globo Digital - Notificações</title>
+
+        <link rel="stylesheet" type="text/css" href="font/fonts-oglobo.css">
+
+        <style type="text/css">
+        html, body { height: 100%; }
+	        body {
+	        	font-family: 'OgloboCondensed', Arial, sans-serif;
+	        	font-weight: normal;
+			    background-image: linear-gradient(#DAE6EE 0%, #FFFFFF 63%);			    
+			}
+
+			.phone {
+			    background: transparent url(img/iphone-autorizado@2x.png) 0 0 no-repeat;
+			    background-size: 100%;
+			    margin: 160px 10px 0px;
+			    width: 43%;
+			    height: 70%;
+			    float: left;
+			    box-sizing: border-box;
+			}
+
+			.title {
+				font-weight: 700;
+				font-size: 21px;
+				color: #364352;
+				line-height: 1;
+				text-transform: uppercase;
+				margin-bottom: 10px;
+				margin-top: 169px;
+				padding-right: 14px;
+				float: left;
+				width: 50%;
+				box-sizing: border-box;
+			}
+
+			.text {
+				font-size: 20px;
+				color: #4A4A4A;
+				line-height: 1;
+				padding-right: 14px;
+				box-sizing: border-box;
+			}
+
+			a.close {
+				color: #01b4fe;
+				font-weight: bold;
+				font-size: 18px;
+				text-decoration: none;
+				display: inline-block;
+				width: 96px;
+				height: 40px;
+				line-height: 40px;
+				border-radius: 20px;
+				border: 1px solid #DDD;
+				text-align: center;
+				clear: both;
+				position: absolute;
+				bottom: 30px;
+				left: 50%;
+				transform: translateX(-50%);
+			}
+
+			.notif {
+				position: fixed;
+				top: -110px;
+				left: 5%;
+				min-height: 106px;
+				width: 336px;
+				max-width: 90%;
+				overflow: hidden;
+				text-align: left;
+				background-color: #FFF;
+				opacity: 0;
+				-webkit-box-shadow: 0px 0px 130px 2px rgba(0,0,0,0.35);
+				-moz-box-shadow: 0px 0px 130px 2px rgba(0,0,0,0.35);
+				box-shadow: 0px 0px 130px 2px rgba(0,0,0,0.35);
+				-webkit-transition: all ease-in 400ms;
+				-moz-transition: all ease-in 400ms;
+				transition: all ease-in 400ms;
+			}
+			.notif.open {
+				top: 20px;
+				opacity: 1;
+			}
+			.notif img {
+			    float: left;
+			    display: block;
+			    margin: 0 14px 0 0;
+			    width: 106px;
+			}
+			.notif h3 {
+				margin: 6px 6px 6px 0;
+				font-family: Helvetica, Arial, sans-serif;
+				font-size: 14px;
+				color: #5A5A5A;
+			}
+			.notif p {
+				margin: 6px 6px 6px 0;
+				font-family: Helvetica, Arial, sans-serif;
+				font-size: 13px;
+				color: #5A5A5A;
+			}
+        </style>
+        <script type="text/javascript">
+			window.onload = function() {
+				setTimeout(function () {
+					document.querySelector('.notif').className += ' open';
+				}, 900);
+			};/**/
+        </script>
+    </head>
+    <body>
+        <div class="bg"></div>
+        <div class="phone"></div>
+        <div class="title">Obrigado. Você já permitiu as notificações do O Globo em seu navegador.</div>
+
+        <div class="text">Agora é só fechar essa janela e continuar recebendo as notícias mais importantes pra você.</div>
+        <a class="close" href="javascript:history.go(-1)">FECHAR</a>
+
+        <div class="notif">
+        	<img src="img/img-@2x.png">
+        	<h3>IR: Consulta ao penúltimo lote será aberta na terça feira</h3>
+        	<p>Mais de 2.2 milhões de contribuintes receberão R$ 2,67 bi no próximo dia 16</p>
+        </div>
+    </body>
 </html>
+	
