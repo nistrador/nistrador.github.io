@@ -56,10 +56,10 @@ function seNavegadorImplementaNotificacao() {
 	return resultado;
 }
 function seLeitorNaoProibeNotificacoes() {
-	var resultado = false;
+	var resultado = true;
 	if ("Notification" in window) {
-		if (Notification.permission !== "denied")
-			resultado = true;
+		if (Notification.permission !== "default")
+			resultado = false;
 	}
 	return resultado;
 }
@@ -94,16 +94,9 @@ function getPermissaoLeitorNotificacaoNoSeguroOGlobo() {
 	
 <div id="armazenaPermissao">
 <script>
-	document.write('<img src="http://xd.globo.com/busca/?s=pra-rir&p=' + getPermissaoLeitorNotificacaoNoSeguroOGlobo() + '" style="display:none"  />');
+	document.write('<img src="http://xd.globo.com/busca/?s=pra-rir&p=' + seLeitorNaoProibeNotificacoes() + '" style="display:none"  />');
 </script>
 </div>
 	
-	<p id="demo"></p>
-
-<script>
-document.getElementById("demo").innerHTML =
-"navigator.platform is " + navigator.platform;
-</script>
-
 </body>
 </html>
