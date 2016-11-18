@@ -16,11 +16,16 @@ function seLeitorJaConfigurouNotificacoes() {
 }
 
 $(function() {
-  if (seLeitorJaConfigurouNotificacoes()) {
-    window.location = "oglobo_web_obrigado.html";
+  if (! seNavegadorSuportaNotificacao()) {
+    document.getElementById("divNaoSuporta").style.display = "inline";
+  }
+  else if (seLeitorJaConfigurouNotificacoes()) {
+    //window.location = "oglobo_web_obrigado.html";
+    document.getElementById("divObrigado").style.display = "inline";
   }
   else {
-    window.location = "oglobo_web_cadastrar.html";
+    //window.location = "oglobo_web_cadastrar.html";
+    document.getElementById("divCadastrar").style.display = "inline";
   }
 });
 </script>
