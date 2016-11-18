@@ -20,27 +20,27 @@ function seLeitorJaConfigurouNotificacoes() {
 
 $(function() {
   if (! seNavegadorSuportaNotificacao()) {
-    document.getElementById("divNaoSuporta").style.display = "inline";
+    document.getElementById("divNaoSuporta").style.className = "divIFrameVisivel";
   }
   else if (seLeitorJaConfigurouNotificacoes()) {
     //window.location = "oglobo_web_obrigado.html";
-    document.getElementById("divObrigado").style.display = "inline";
+    document.getElementById("divObrigado").style.className = "divIFrameVisivel";
   }
   else {
     //window.location = "oglobo_web_cadastrar.html";
-    document.getElementById("divCadastrar").style.display = "inline";
+    document.getElementById("divCadastrar").style.className = "divIFrameVisivel";
   }
 });
 </script>
 </head>
 <body>
-  <div id="divNaoSuporta" class="divIFrame">
+  <div id="divNaoSuporta" class="divIFrameInvisivel">
     <p align="center">Notificações não são suportadas no seu navegador.</p>
   </div>
-  <div id="divCadastrar" class="divIFrame">
+  <div id="divCadastrar" class="divIFrameInvisivel">
     <iframe src="oglobo_web_cadastrar.html" />
   </div>
-  <div id="divObrigado" class="divIFrame">
+  <div id="divObrigado" class="divIFrameInvisivel">
     <iframe src="oglobo_web_obrigado.html" />
   </div>
 </body>
