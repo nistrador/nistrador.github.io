@@ -19,3 +19,13 @@ function leitorIraVisualizarModalNovamente() {
     
   return resultado;
 }
+
+function getPermissaoLeitorNotificacaoNoSeguroOGlobo() { 
+  var resultado = "default";
+  if (window.navigator != null) {
+    if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined') {
+      resultado = Notification.permission;
+    }		
+  }
+  return resultado;
+}
