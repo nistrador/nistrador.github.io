@@ -1,31 +1,59 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>OGlobo - Notificações - Redirecionamento</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script>
-function seNavegadorSuportaNotificacao() {
-  return ("Notification" in window);
-}
-function seLeitorJaConfigurouNotificacoes() {
-	if (seNavegadorSuportaNotificacao()) {
-		if (Notification.permission !== "default")
-			return true;
-	}
-	return false;
-}
+  <head>
+    <title>O Globo Digital - Notificações</title>
+	
+    <link rel="stylesheet" type="text/css" href="css/index_oglobo.css">
+    <link rel="manifest" href="/manifest.json">
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+    <script src="js/notificacao.js"></script>
 
-$(function() {
-  if (seLeitorJaConfigurouNotificacoes()) {
-    window.location = "oglobo_mobi_obrigado.html";
-  }
-  else {
-    window.location = "oglobo_mobi_cadastrar.html";
-  }
-});
-</script>
-</head>
-<body>
-  <p align="center">Notificações não são suportadas no seu navegador.</p>
-</body>
+    <script>
+      var OneSignal = window.OneSignal || [];
+      OneSignal.push(["init", {
+      appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
+      autoRegister: false, /* Set to true to automatically prompt visitors */
+      welcomeNotification: {
+        title: "OGlobo - notificações",
+        message: "Obrigado por se subscrever para receber notificações!"
+      },
+      notifyButton: {
+        enable: false /* Set to false to hide */
+      }
+      }]);
+    </script>
+	
+    <script>
+      $(function() {
+        if (! navegadorSuportaNotificacao()) {
+          $('#divNaoSuporta').removeClass('divIFrameInvisivel');
+          $('#divNaoSuporta').addClass('divIFrameVisivel');
+        }
+        else if (leitorJaConfigurouNotificacoes()) {
+          $('#divObrigado').removeClass('divIFrameInvisivel');
+          $('#divObrigado').addClass('divIFrameVisivel');
+        }
+        else {
+          $('#divCadastrar').removeClass('divIFrameInvisivel');
+          $('#divCadastrar').addClass('divIFrameVisivel');
+		
+          setTimeout(function() { subscrever(); }, 2000);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="divNaoSuporta" class="divIFrameInvisivel">
+      <p align="center">Notificações não são suportadas no seu navegador.</p>
+    </div>
+    <div id="divCadastrar" class="divIFrameInvisivel">
+      <iframe src="oglobo_mobi_cadastrar.html" class="fullScreen"></iframe>
+    </div>
+    <div id="divObrigado" class="divIFrameInvisivel">
+      <iframe src="oglobo_mobi_obrigado.html" class="fullScreen"></iframe>
+    </div>
+    
+  </body>
 </html>
