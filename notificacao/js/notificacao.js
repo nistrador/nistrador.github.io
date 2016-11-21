@@ -1,5 +1,8 @@
 function navegadorSuportaNotificacao() {
-  return ("Notification" in window);
+  if ("Notification" in window)
+    return true;
+  else
+    return false;
 }
 
 function leitorJaConfigurouNotificacoes() {
