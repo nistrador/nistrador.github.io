@@ -6,7 +6,7 @@ function navegadorSuportaNotificacao() {
 }
 
 function leitorJaConfigurouNotificacoes() {
-	if (seNavegadorSuportaNotificacao()) {
+	if (navegadorSuportaNotificacao()) {
 		if (Notification.permission !== "default")
 			return true;
 	}
