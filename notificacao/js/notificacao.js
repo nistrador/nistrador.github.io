@@ -1,14 +1,3 @@
-var parentWindow;
-
-function setParentWindow(myWindow) {
-  parentWindow = myWindow;
-}
-
-function closeWindowFromIFrame() {
-  if (typeof(parentWindow) != 'undefined' && parentWindow != null)
-    parentWindow.close();
-}
-
 function navegadorSuportaNotificacao() {
   if ("Notification" in window)
     return true;
