@@ -27,6 +27,7 @@
 	
     <script>
       $(function() {
+	setParentWindow(window);
         if (! navegadorSuportaNotificacao()) {
           $('#divNaoSuporta').removeClass('divIFrameInvisivel');
           $('#divNaoSuporta').addClass('divIFrameVisivel');
