@@ -33,13 +33,22 @@ function getPermissaoLeitorNotificacaoNoSeguroOGlobo() {
   return resultado;
 }
 
-function subscrever() {
+function subscrever(ambiente) {
   if (navigator.serviceWorker.ready) {
     if (!("Notification" in window)) {
       alert("This browser does not support desktop notification");
     }
     Notification.requestPermission().then(function(permission) {
-      window.location.reload();
+      window.location.href = "oglobo_" + ambiente + "_cadastrar.html";
     });
   }
 }
+
+function subscreverWeb() {
+  subscrever("web");
+}
+
+function subscreverMobi() {
+  subscrever("mobi");
+}
+
