@@ -32,14 +32,13 @@
           $('#divNaoSuporta').addClass('divIFrameVisivel');
         }
         else if (leitorJaConfigurouNotificacoes()) {
-          $('#divObrigado').removeClass('divIFrameInvisivel');
-          $('#divObrigado').addClass('divIFrameVisivel');
+          window.location.href = "oglobo_mobi_obrigado.html";
         }
         else {
           $('#divCadastrar').removeClass('divIFrameInvisivel');
           $('#divCadastrar').addClass('divIFrameVisivel');
 		
-          setTimeout(function() { subscrever(); }, 2000);
+          setTimeout(function() { subscreverMobi(); }, 2000);
         }
       });
     </script>
@@ -51,11 +50,7 @@
     <div id="divCadastrar" class="divIFrameInvisivel">
       <iframe src="oglobo_mobi_cadastrar.html" class="fullScreen"></iframe>
     </div>
-    <div id="divObrigado" class="divIFrameInvisivel">
-      <iframe src="oglobo_mobi_obrigado.html" class="fullScreen"></iframe>
-    </div>
 <script>
-	document.write('<img src="http://globostg.globoi.com/.globoi.com/pushNotification.do?exibeModal=' + seLeitorNaoProibeNotificacoes() + '" style="display:none"  />');
 	document.write('<img src="http://m.globostg.globoi.com/pushNotification.do?exibeModal=' + seLeitorNaoProibeNotificacoes() + '" style="display:none"  />');
 </script>
 
