@@ -97,7 +97,12 @@
 				if (leitorJaConfigurouNotificacoes()) {
 					setTimeout(function () {
 						window.close();
-					}, 3000);
+					}, 1000);
+				}
+				if (leitorJaConfigurouNotificacoes()) {
+					setTimeout(function () {
+						window.location.reload();
+					}, 1500);
 				}
 			};
         </script>
