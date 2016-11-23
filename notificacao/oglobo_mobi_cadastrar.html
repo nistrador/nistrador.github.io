@@ -8,6 +8,7 @@
         <title></title>
 
         <link rel="stylesheet" type="text/css" href="css/fonts-oglobo.css">
+        <script src="js/notificacao.js"></script>
 
         <style type="text/css">
         html, body { height: 100%; }
@@ -95,9 +96,11 @@
 				setTimeout(function () {
 					document.querySelector('.notif').className += ' open';
 				}, 900);
-				setTimeout(function () {
-					history.go(-1);
-				}, 3000);
+				if (leitorJaConfigurouNotificacoes()) {
+					setTimeout(function () {
+						history.go(-1);
+					}, 3000);
+				}
 			};/**/
         </script>
     </head>
