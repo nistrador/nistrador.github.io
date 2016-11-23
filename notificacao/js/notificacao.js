@@ -33,6 +33,10 @@ function getPermissaoLeitorNotificacaoNoSeguroOGlobo() {
   return resultado;
 }
 
+function leitorNegouNotificacao() {
+  return "denied" === getPermissaoLeitorNotificacaoNoSeguroOGlobo();
+}
+
 function subscrever(ambiente) {
   if (navigator.serviceWorker.ready) {
     if (!("Notification" in window)) {
