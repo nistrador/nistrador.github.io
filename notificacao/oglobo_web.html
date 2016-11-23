@@ -32,7 +32,12 @@
           $('#divNaoSuporta').addClass('divIFrameVisivel');
         }
         else if (leitorJaConfigurouNotificacoes()) {
-	  open("oglobo_web_obrigado.html", '_self');
+          if (leitorNegouNotificacao()) {
+            open("oglobo_web_recadastro.html", '_self');
+	  }
+          else {
+	    open("oglobo_web_obrigado.html", '_self');
+	  }
 	  //window.location.href = "oglobo_web_obrigado.html";
           //$('#divObrigado').removeClass('divIFrameInvisivel');
           //$('#divObrigado').addClass('divIFrameVisivel');
