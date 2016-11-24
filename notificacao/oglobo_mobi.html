@@ -32,7 +32,15 @@
           $('#divNaoSuporta').addClass('divIFrameVisivel');
         }
         else if (leitorJaConfigurouNotificacoes()) {
-          window.location.href = "oglobo_mobi_obrigado.html";
+          if (leitorNegouNotificacao()) {
+            open("oglobo_web_recadastro.html", '_self');
+	  }
+          else {
+	    open("oglobo_mobi_obrigado.html", '_self');
+	  }
+	  //window.location.href = "oglobo_web_obrigado.html";
+          //$('#divObrigado').removeClass('divIFrameInvisivel');
+          //$('#divObrigado').addClass('divIFrameVisivel');
         }
         else {
           $('#divCadastrar').removeClass('divIFrameInvisivel');
@@ -51,7 +59,7 @@
       <iframe src="oglobo_mobi_cadastrar.html" class="fullScreen"></iframe>
     </div>
     <script>
-	document.write('<img src="http://infoecedsvglobo3.globoi.com/pushNotification.do?exibeModal=' + leitorIraVisualizarModalNovamente() + '" style="display:none"  />');
+	document.write('<img src="http://m.infoecedsvglobo3.globoi.com/pushNotification.do?exibeModal=' + leitorIraVisualizarModalNovamente() + '" style="display:none"  />');
     </script>
 
   </body>
