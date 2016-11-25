@@ -44,6 +44,11 @@ function subscrever(ambiente) {
     }
     Notification.requestPermission().then(function(permission) {
       window.location.href = "oglobo_" + ambiente + "_cadastrar.html";
+      if (leitorNegouNotificacao()) {
+        ga('send', 'pageview', 'oglobo_' + ambiente + '_negou.html');
+      }
+      else
+        ga('send', 'pageview', 'oglobo_' + ambiente + '_permitiu.html');
     });
   }
 }
