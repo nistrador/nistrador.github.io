@@ -98,13 +98,8 @@
 				}, 900);
 				if (leitorJaConfigurouNotificacoes()) {
 					setTimeout(function () {
-						history.go(-3);
+						window.location.history.go(-2);
 					}, 1000);
-				}
-				if (leitorJaConfigurouNotificacoes()) {
-					setTimeout(function () {
-						window.location.reload();
-					}, 1500);
 				}
 			};/**/
         </script>
