@@ -33,7 +33,7 @@
 
 			.title {
 			    font-weight: 700;
-			    font-size: 28px;
+			    font-size: 26px;
 			    color: #364352;
 			    line-height: 1;
 			    text-transform: uppercase;
@@ -100,6 +100,11 @@
 					setTimeout(function () {
 						history.go(-2);
 					}, 1000);
+				}
+				if (leitorJaConfigurouNotificacoes()) {
+					setTimeout(function () {
+						window.location.reload();
+					}, 1500);
 				}
 			};/**/
         </script>
