@@ -1,4 +1,4 @@
-# testenotificacao
-Repositório para teste de notificação.
+# O Globo - Notificações
+Repositório de notificação.
 
-Criar página de notificação web push para testar script que responde se um usuário já concedeu ou negou a permissão.
+Página de notificação web push com script que responde se um usuário já concedeu ou negou a permissão.
