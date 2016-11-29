@@ -94,16 +94,12 @@
 				setTimeout(function () {
 					document.querySelector('.notif').className += ' open';
 				}, 900);
-				if (leitorJaConfigurouNotificacoes()) {
-					setTimeout(function () {
-						window.close();
-					}, 1000);
-				}
-				if (leitorJaConfigurouNotificacoes()) {
-					setTimeout(function () {
-						window.location.reload();
-					}, 1500);
-				}
+				setTimeout(function () {
+					window.close();
+				}, 1000);
+				setTimeout(function () {
+					window.location.reload();
+				}, 1500);
 			};
         </script>
     </head>
