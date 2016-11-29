@@ -47,8 +47,14 @@ function subscrever(ambiente) {
       if (leitorNegouNotificacao()) {
         ga('send', 'pageview', 'oglobo_' + ambiente + '_negou.html');
       }
-      else
-        ga('send', 'pageview', 'oglobo_' + ambiente + '_permitiu.html');
+      else {
+        if (leitorJaConfigurouNotificacoes()) {
+          ga('send', 'pageview', 'oglobo_' + ambiente + '_permitiu.html');
+	}
+        else {
+          // Não fazer nada
+	}
+      }
     });
   }
 }
