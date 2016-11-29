@@ -35,13 +35,12 @@
         else if (leitorJaConfigurouNotificacoes()) {
           if (leitorNegouNotificacao()) {
             open("oglobo_web_recadastro.html", '_self');
+            ga('send', 'pageview', 'oglobo_web_recadastro.html');
 	  }
           else {
 	    open("oglobo_web_obrigado.html", '_self');
+            ga('send', 'pageview', 'oglobo_web_obrigado.html');
 	  }
-	  //window.location.href = "oglobo_web_obrigado.html";
-          //$('#divObrigado').removeClass('divIFrameInvisivel');
-          //$('#divObrigado').addClass('divIFrameVisivel');
         }
         else {
           $('#divCadastrar').removeClass('divIFrameInvisivel');
