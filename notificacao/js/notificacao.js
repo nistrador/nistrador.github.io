@@ -52,7 +52,8 @@ function subscrever(ambiente) {
           ga('send', 'pageview', 'oglobo_' + ambiente + '_permitiu.html');
 	}
         else {
-          // Não fazer nada
+          // Usuário fechou
+          ga('send', 'pageview', 'oglobo_' + ambiente + '_fechou.html');
 	}
       }
     });
