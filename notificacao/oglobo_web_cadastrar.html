@@ -94,12 +94,14 @@
 				setTimeout(function () {
 					document.querySelector('.notif').className += ' open';
 				}, 900);
-				setTimeout(function () {
-					window.close();
-				}, 1000);
-				setTimeout(function () {
-					window.location.reload();
-				}, 1500);
+				if (inIframe()) {
+					setTimeout(function () {
+						window.close();
+					}, 1000);
+					setTimeout(function () {
+						window.location.reload();
+					}, 1500);
+				}
 			};
         </script>
     </head>
