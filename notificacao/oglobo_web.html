@@ -36,12 +36,12 @@
         }
         else if (leitorJaConfigurouNotificacoes()) {
           if (leitorNegouNotificacao()) {
-            open("oglobo_web_recadastro.html", '_self');
             ga('send', 'pageview', 'oglobo_web_recadastro.html');
+            open("oglobo_web_recadastro.html", '_self');
 	  }
           else {
-	    open("oglobo_web_obrigado.html", '_self');
             ga('send', 'pageview', 'oglobo_web_obrigado.html');
+	    open("oglobo_web_obrigado.html", '_self');
 	  }
         }
         else {
