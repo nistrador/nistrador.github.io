@@ -94,7 +94,7 @@
 				setTimeout(function () {
 					document.querySelector('.notif').className += ' open';
 				}, 900);
-				if (inIframe()) {
+				if (!inIframe()) {
 					setTimeout(function () {
 						window.close();
 					}, 1000);
