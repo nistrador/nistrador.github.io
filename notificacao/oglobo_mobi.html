@@ -32,12 +32,16 @@
         if (! navegadorSuportaNotificacao()) {
           $('#divNaoSuporta').removeClass('divIFrameInvisivel');
           $('#divNaoSuporta').addClass('divIFrameVisivel');
+		
+          ga('send', 'pageview', 'oglobo_mobi_nao_suporta.html');
         }
         else if (leitorJaConfigurouNotificacoes()) {
           if (leitorNegouNotificacao()) {
+            ga('send', 'pageview', 'oglobo_mobi_recadastro.html');
             open("oglobo_mobi_recadastro.html", '_self');
 	  }
           else {
+            ga('send', 'pageview', 'oglobo_mobi_obrigado.html');
 	    open("oglobo_mobi_obrigado.html", '_self');
 	  }
         }
