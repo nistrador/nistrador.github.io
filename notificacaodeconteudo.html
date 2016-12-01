@@ -23,7 +23,7 @@
         alert("This browser does not support desktop notification");
       }
       Notification.requestPermission().then(function(permission) {
-        window.location.href = "oglobo_web_cadastrar.html";
+        console.log(permission);
       });
     }
   }
