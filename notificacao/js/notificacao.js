@@ -1,6 +1,6 @@
 var temporaryPermissionStatus = "";
 
-function polling() {
+function polling(ambiente) {
   if (temporaryPermissionStatus !== Notification.permission) {
     temporaryPermissionStatus = Notification.permission;
 
@@ -9,10 +9,10 @@ function polling() {
     }
   }
   if (! leitorJaConfigurouNotificacoes()) {
-    setTimeout(function() { polling(); }, 500);
+    setTimeout(function() { polling(ambiente); }, 500);
   }
   else {
-    setTimeout(function() { finalizaSubscricao(); }, 500);
+    setTimeout(function() { finalizaSubscricao(ambiente); }, 500);
   }
 }
 
@@ -71,7 +71,7 @@ function leitorNegouNotificacao() {
   return "denied" === getPermissaoLeitorNotificacaoNoSeguroOGlobo();
 }
 
-function finalizaSubscricao() {
+function finalizaSubscricao(ambiente) {
   if (leitorNegouNotificacao()) {
     ga('send', 'pageview', 'oglobo_' + ambiente + '_negou.html');
     window.location.href = "oglobo_" + ambiente + "_cadastrar.html";
@@ -86,7 +86,7 @@ function finalizaSubscricao() {
 
 function subscrever(ambiente) {
   inicializaOneSignal();
-  polling();
+  polling(ambiente);
 }
 
 function subscreverWeb() {
