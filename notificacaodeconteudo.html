@@ -1,6 +1,8 @@
 <html>
 
 <head>
+  
+  
   <link rel="manifest" href="/manifest.json">
   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
   <script>
@@ -12,6 +14,22 @@
           enable: false /* Set to false to hide */
       }
     }]);
+  </script>
+  <script>
+  function subscrever() {
+    if (navigator.serviceWorker.ready) {
+      if (!("Notification" in window)) {
+        alert("This browser does not support desktop notification");
+      }
+      Notification.requestPermission().then(function(permission) {
+        window.location.href = "oglobo_web_cadastrar.html";
+      });
+    }
+  }
+    
+   $(function(){
+    subscrever();
+     )};
   </script>
 </head>
 
