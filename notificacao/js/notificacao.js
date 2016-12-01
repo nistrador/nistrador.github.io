@@ -30,6 +30,7 @@ function inicializaOneSignal()
       enable: false /* Set to false to hide */
     }
   }]);
+	console.log("teste");
 }
 
 function navegadorSuportaNotificacao() {
