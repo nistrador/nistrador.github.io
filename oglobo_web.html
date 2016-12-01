@@ -14,9 +14,7 @@
       $(function() {
         if (! navegadorSuportaNotificacao()) {
           $('#divNaoSuporta').removeClass('divIFrameInvisivel');
-          $('#divNaoSuporta').addClass('divIFrameVisivel');
-		
-          ga('send', 'pageview', 'oglobo_web_nao_suporta.html');
+          $('#divNaoSuporta').addClass('divIFrameVisivel');   
         }
         else if (leitorJaConfigurouNotificacoes()) {
           if (leitorNegouNotificacao()) {     
