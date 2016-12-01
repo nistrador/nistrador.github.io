@@ -21,10 +21,23 @@
 	}
 	return false;
 }
+	  
+	  var temporaryPermissionStatus = "";
+	  function polling() {
+		  if (temporaryPermissionStatus !== Notification.permission) {
+			  temporaryPermissionStatus = Notification.permission;
+			  
+			  if (leitorJaConfigurouNotificacoes()) {
+				  console.log("não vamos beber, mas a permissão é " + temporaryPermissionStatus);
+			  }
+		  }
+		  setTimeout(function() { polling(); }, 500);
+	  }
+	  
 	  function inicializa()
 	  {
 		  var OneSignal = window.OneSignal || [];
-      OneSignal.push(["init", confirma(), {
+      OneSignal.push(["init", {
       appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
       autoRegister: true, /* Set to true to automatically prompt visitors */
       welcomeNotification: {
@@ -45,6 +58,7 @@
 	  }
 	  
   function subscrever() {
+	  polling();
        inicializa();
    
     
