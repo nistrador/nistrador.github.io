@@ -1,3 +1,37 @@
+var temporaryPermissionStatus = "";
+
+function polling() {
+  if (temporaryPermissionStatus !== Notification.permission) {
+    temporaryPermissionStatus = Notification.permission;
+
+    if (leitorJaConfigurouNotificacoes()) {
+    console.log("não vamos beber, mas a permissão é " + temporaryPermissionStatus);
+    }
+  }
+  if (! leitorJaConfigurouNotificacoes()) {
+    setTimeout(function() { polling(); }, 500);
+  }
+  else {
+    setTimeout(function() { finalizaSubscricao(); }, 500);
+  }
+}
+
+function inicializaOneSignal()
+{
+  var OneSignal = window.OneSignal || [];
+  OneSignal.push(["init", {
+    appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
+    autoRegister: true, /* Set to true to automatically prompt visitors */
+    welcomeNotification: {
+      title: "Notificações O GLOBO",
+      message: "Obrigado! Agora você será notificado sempre que houver notícias importantes para manter-se informado."
+    },
+    notifyButton: {
+      enable: false /* Set to false to hide */
+    }
+  }]);
+}
+
 function navegadorSuportaNotificacao() {
   if ("Notification" in window)
     return true;
@@ -37,27 +71,22 @@ function leitorNegouNotificacao() {
   return "denied" === getPermissaoLeitorNotificacaoNoSeguroOGlobo();
 }
 
-function subscrever(ambiente) {
-  if (navigator.serviceWorker.ready) {
-    if (!("Notification" in window)) {
-      alert("This browser does not support desktop notification");
-    }
-    Notification.requestPermission().then(function(permission) {
-      window.location.href = "oglobo_" + ambiente + "_cadastrar.html";
-      if (leitorNegouNotificacao()) {
-        ga('send', 'pageview', 'oglobo_' + ambiente + '_negou.html');
-      }
-      else {
-        if (leitorJaConfigurouNotificacoes()) {
-          ga('send', 'pageview', 'oglobo_' + ambiente + '_permitiu.html');
-	}
-        else {
-          // Usuário fechou
-          ga('send', 'pageview', 'oglobo_' + ambiente + '_fechou.html');
-	}
-      }
-    });
+function finalizaSubscricao() {
+  if (leitorNegouNotificacao()) {
+    ga('send', 'pageview', 'oglobo_' + ambiente + '_negou.html');
+    window.location.href = "oglobo_" + ambiente + "_cadastrar.html";
   }
+  else {
+    if (leitorJaConfigurouNotificacoes()) {
+      ga('send', 'pageview', 'oglobo_' + ambiente + '_permitiu.html');
+      window.location.href = "oglobo_" + ambiente + "_cadastrar.html";
+    }
+  }
+}
+
+function subscrever(ambiente) {
+  inicializaOneSignal();
+  polling();
 }
 
 function subscreverWeb() {
