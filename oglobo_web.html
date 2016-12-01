@@ -9,8 +9,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
     <script src="notificacao/js/notificacao.js"></script>
-    <script src="notificacao/js/ga.js"></script>
-
+    
     <script>
       $(function() {
         if (! navegadorSuportaNotificacao()) {
@@ -20,13 +19,11 @@
           ga('send', 'pageview', 'oglobo_web_nao_suporta.html');
         }
         else if (leitorJaConfigurouNotificacoes()) {
-          if (leitorNegouNotificacao()) {
-            ga('send', 'pageview', 'oglobo_web_recadastro.html');
-            open("oglobo_web_recadastro.html", '_self');
+          if (leitorNegouNotificacao()) {     
+            open("notificacao/oglobo_web_recadastro.html", '_self');
 	  }
           else {
-            ga('send', 'pageview', 'oglobo_web_obrigado.html');
-	    open("oglobo_web_obrigado.html", '_self');
+	    open("notificacao/oglobo_web_obrigado.html", '_self');
 	  }
         }
         else {
