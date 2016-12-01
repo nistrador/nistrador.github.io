@@ -4,6 +4,7 @@
   
   
   <link rel="manifest" href="/manifest.json">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
   <script>
     var OneSignal = window.OneSignal || [];
@@ -28,7 +29,7 @@
   }
     
    $(function(){
-    subscrever();
+     setTimeout(function() { subscrever(); }, 2000);
      )};
   </script>
 </head>
