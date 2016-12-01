@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>O Globo Digital - Notificações</title>
+	  
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">	
+    <link rel="stylesheet" type="text/css" href="css/index_oglobo.css">
+    <link rel="manifest" href="/manifest.json">
+	
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
+    <script src="js/notificacao.js"></script>
+
+    <script>
+      $(function() {
+        if (! navegadorSuportaNotificacao()) {
+          $('#divNaoSuporta').removeClass('divIFrameInvisivel');
+          $('#divNaoSuporta').addClass('divIFrameVisivel');
+		
+          ga('send', 'pageview', 'oglobo_mobi_nao_suporta.html');
+        }
+        else if (leitorJaConfigurouNotificacoes()) {
+          if (leitorNegouNotificacao()) {
+            open("oglobo_mobi_recadastro.html", '_self');
+	     }
+          else {
+      	    open("oglobo_mobi_obrigado.html", '_self');
+	  }
+        }
+        else {
+          $('#divCadastrar').removeClass('divIFrameInvisivel');
+          $('#divCadastrar').addClass('divIFrameVisivel');
+		
+          setTimeout(function() { subscreverMobi(); }, 2000);
+        }
+      });
+    </script>
+  </head>
+  <body>
+    <div id="divNaoSuporta" class="divIFrameInvisivel">
+      <p align="center">Notificações não são suportadas no seu navegador.</p>
+    </div>
+    <div id="divCadastrar" class="divIFrameInvisivel">
+      <iframe src="oglobo_mobi_cadastrar.html" class="fullScreen"></iframe>
+    </div>
+    <script>
+	document.write('<img src="http://m.oglobo.globo.com/pushNotification.do?exibeModal=' + leitorIraVisualizarModalNovamente() + '" style="display:none"  />');
+    </script>
+
+  </body>
+</html>
