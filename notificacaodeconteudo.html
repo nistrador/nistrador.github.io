@@ -8,6 +8,12 @@
   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
  
   <script>
+	  function navegadorSuportaNotificacao() {
+  if ("Notification" in window)
+    return true;
+  else
+    return false;
+}
     function leitorJaConfigurouNotificacoes() {
 	if (navegadorSuportaNotificacao()) {
 		if (Notification.permission !== "default")
@@ -15,9 +21,9 @@
 	}
 	return false;
 }
-  function subscrever() {
-    
-      var OneSignal = window.OneSignal || [];
+	  function inicializa()
+	  {
+		  var OneSignal = window.OneSignal || [];
       OneSignal.push(["init", {
       appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
       autoRegister: true, /* Set to true to automatically prompt visitors */
@@ -28,10 +34,18 @@
       notifyButton: {
         enable: false /* Set to false to hide */
       }
-      }]);
-   
-    if (leitorJaConfigurouNotificacoes())
+      }, confirma()]);
+	  }
+	  
+	  function confirma() {
+		  if (leitorJaConfigurouNotificacoes())
       console.log('vamo beber!');
+	  }
+	  
+  function subscrever() {
+       inicializa();
+   
+    
     /*if (navigator.serviceWorker.ready) {
      // if (!("Notification" in window)) {
      //   alert("This browser does not support desktop notification");
