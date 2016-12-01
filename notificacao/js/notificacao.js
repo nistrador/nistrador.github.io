@@ -72,15 +72,8 @@ function leitorNegouNotificacao() {
 }
 
 function finalizaSubscricao(ambiente) {
-  if (leitorNegouNotificacao()) {
-    ga('send', 'pageview', 'oglobo_' + ambiente + '_negou.html');
+  if (leitorJaConfigurouNotificacoes()) {
     window.location.href = "notificacao/oglobo_" + ambiente + "_cadastrar.html";
-  }
-  else {
-    if (leitorJaConfigurouNotificacoes()) {
-      ga('send', 'pageview', 'oglobo_' + ambiente + '_permitiu.html');
-      window.location.href = "notificacao/oglobo_" + ambiente + "_cadastrar.html";
-    }
   }
 }
 
