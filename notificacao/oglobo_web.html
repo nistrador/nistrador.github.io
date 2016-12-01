@@ -12,21 +12,6 @@
     <script src="js/ga.js"></script>
 
     <script>
-      var OneSignal = window.OneSignal || [];
-      OneSignal.push(["init", {
-      appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
-      autoRegister: false, /* Set to true to automatically prompt visitors */
-      welcomeNotification: {
-        title: "Notificações O GLOBO",
-        message: "Obrigado! Agora você será notificado sempre que houver notícias importantes para manter-se informado."
-      },
-      notifyButton: {
-        enable: false /* Set to false to hide */
-      }
-      }]);
-    </script>
-	
-    <script>
       $(function() {
         if (! navegadorSuportaNotificacao()) {
           $('#divNaoSuporta').removeClass('divIFrameInvisivel');
