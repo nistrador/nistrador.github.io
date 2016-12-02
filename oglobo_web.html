@@ -11,6 +11,28 @@
     <script src="notificacao.js"></script>
     
     <script>
+      function initOneSignal()
+      {
+        var OneSignal = window.OneSignal || [];
+        OneSignal.push(["init", {
+          appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
+          autoRegister: true, /* Set to true to automatically prompt visitors */
+          welcomeNotification: {
+            title: "Notificações O GLOBO",
+            message: "Obrigado! Agora você será notificado sempre que houver notícias importantes para manter-se informado."
+          },
+          notifyButton: {
+            enable: false /* Set to false to hide */
+          }
+        }]);
+	console.log("teste");
+      }
+	    
+      function subscrever() {
+        initOneSignal();
+        polling('web');
+      }
+
       $(function() {
         if (! navegadorSuportaNotificacao()) {
           $('#divNaoSuporta').removeClass('divIFrameInvisivel');
@@ -28,7 +50,7 @@
           $('#divCadastrar').removeClass('divIFrameInvisivel');
           $('#divCadastrar').addClass('divIFrameVisivel');
 		
-          setTimeout(function() { subscreverWeb(); }, 2000);
+          setTimeout(function() { subscrever(); }, 2000);
         }
       });
     </script>
