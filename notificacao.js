@@ -4,7 +4,7 @@ function polling(ambiente) {
   if (temporaryPermissionStatus !== Notification.permission) {
     temporaryPermissionStatus = Notification.permission;
     if (leitorJaConfigurouNotificacoes()) {
-    console.log("permissão" + temporaryPermissionStatus);
+    console.log("permissao" + temporaryPermissionStatus);
     }
   }
   if (! leitorJaConfigurouNotificacoes()) {
