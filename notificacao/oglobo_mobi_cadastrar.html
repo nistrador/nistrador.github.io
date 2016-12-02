@@ -132,12 +132,10 @@
 					document.querySelector('.notif').className += ' open';
 				}, 900);
 				if (!inIframe()) {
-					setTimeout(function () {
-						history.go(-2);
-					}, 250);
+					history.go(-2);
 				} 
 	}
-		
+	
 	window.onload = carregaMobi(); 
         </script>
     </head>
