@@ -37,7 +37,11 @@
     
       return resultado;
     }
-
+    function finalizaSubscricao(ambiente) {
+      if (leitorJaConfigurouNotificacoes()) {
+        window.location.href = "notificacao/oglobo_" + ambiente + "_cadastrar.html";
+      }
+    }
     function polling(ambiente) {
       if (temporaryPermissionStatus !== Notification.permission) {
         temporaryPermissionStatus = Notification.permission;
