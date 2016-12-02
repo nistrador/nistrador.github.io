@@ -16,8 +16,6 @@
         if (! navegadorSuportaNotificacao()) {
           $('#divNaoSuporta').removeClass('divIFrameInvisivel');
           $('#divNaoSuporta').addClass('divIFrameVisivel');
-		
-          ga('send', 'pageview', 'oglobo_mobi_nao_suporta.html');
         }
         else if (leitorJaConfigurouNotificacoes()) {
           if (leitorNegouNotificacao()) {
