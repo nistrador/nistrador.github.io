@@ -3,7 +3,7 @@ var temporaryPermissionStatus = "";
 function polling(ambiente) {
   if (temporaryPermissionStatus !== Notification.permission) {
     temporaryPermissionStatus = Notification.permission;
-alert('temporaryPermissionStatus',temporaryPermissionStatus);
+alert('temporaryPermissionStatus '+temporaryPermissionStatus);
     if (leitorJaConfigurouNotificacoes()) {
     console.log("não vamos beber, mas a permissão é " + temporaryPermissionStatus);
     }
