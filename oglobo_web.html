@@ -23,6 +23,15 @@
       }
       return false;
     }
+    function leitorIraVisualizarModalNovamente() {
+      var resultado = true;
+      if (! navegadorSuportaNotificacao())
+        resultado = false;
+      if (leitorJaConfigurouNotificacoes())
+        resultado = false;
+    
+      return resultado;
+    }
     function polling(ambiente) {
       if (temporaryPermissionStatus !== Notification.permission) {
         temporaryPermissionStatus = Notification.permission;
