@@ -126,17 +126,18 @@
 			}
         </style>
         <script type="text/javascript">
+	function voltaParaOSiteOGlobo() {
+		if (!inIframe()) {
+			history.go(-2);
+		} 
+	}
 		
-	function carregaMobi() {
-		setTimeout(function () {
+	window.onload = function() {
+				setTimeout(function () {
 					document.querySelector('.notif').className += ' open';
 				}, 900);
-				if (!inIframe()) {
-					history.go(-2);
-				} 
-	}
-	
-	window.onload = carregaMobi(); 
+				voltaParaOSiteOGlobo();
+			};
         </script>
     </head>
     <body>
