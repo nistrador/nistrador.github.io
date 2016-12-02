@@ -37,12 +37,6 @@ function leitorNegouNotificacao() {
   return "denied" === getPermissaoLeitorNotificacaoNoSeguroOGlobo();
 }
 
-function finalizaSubscricao(ambiente) {
-  if (leitorJaConfigurouNotificacoes()) {
-    window.location.href = "notificacao/oglobo_" + ambiente + "_cadastrar.html";
-  }
-}
-
 function inIframe () {
     try {
         return window.self !== window.top;
