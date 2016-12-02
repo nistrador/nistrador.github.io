@@ -1,37 +1,3 @@
-var temporaryPermissionStatus = "";
-
-function polling(ambiente) {
-  if (temporaryPermissionStatus !== Notification.permission) {
-    temporaryPermissionStatus = Notification.permission;
-    if (leitorJaConfigurouNotificacoes()) {
-    console.log("permissao" + temporaryPermissionStatus);
-    }
-  }
-  if (! leitorJaConfigurouNotificacoes()) {
-    setTimeout(function() { polling(ambiente); }, 500);
-  }
-  else {
-    setTimeout(function() { finalizaSubscricao(ambiente); }, 500);
-  }
-}
-
-function inicializaOneSignal()
-{
-  var OneSignal = window.OneSignal || [];
-  OneSignal.push(["init", {
-    appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
-    autoRegister: true, /* Set to true to automatically prompt visitors */
-    welcomeNotification: {
-      title: "Notificações O GLOBO",
-      message: "Obrigado! Agora você será notificado sempre que houver notícias importantes para manter-se informado."
-    },
-    notifyButton: {
-      enable: false /* Set to false to hide */
-    }
-  }]);
-	console.log("teste");
-}
-
 function navegadorSuportaNotificacao() {
   if ("Notification" in window)
     return true;
@@ -75,19 +41,6 @@ function finalizaSubscricao(ambiente) {
   if (leitorJaConfigurouNotificacoes()) {
     window.location.href = "notificacao/oglobo_" + ambiente + "_cadastrar.html";
   }
-}
-
-function subscrever(ambiente) {
-  inicializaOneSignal();
-  polling(ambiente);
-}
-
-function subscreverWeb() {
-  subscrever("web");
-}
-
-function subscreverMobi() {
-  subscrever("mobi");
 }
 
 function inIframe () {
