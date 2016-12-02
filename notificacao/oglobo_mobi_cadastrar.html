@@ -131,9 +131,12 @@
 					document.querySelector('.notif').className += ' open';
 				}, 900);
 				if (!inIframe()) {
+					console.log('taiframe',inIframe());
 					setTimeout(function () {
 						window.location.history.go(-2);
 					}, 1000);
+				} else {
+					console.log('naotaiframe',inIframe());
 				}
 			};/**/
         </script>
