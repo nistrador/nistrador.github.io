@@ -75,10 +75,24 @@
   }
     
    $(function(){
+	   if (! navegadorSuportaNotificacao()) {
+          $('#divNaoSuporta').removeClass('divIFrameInvisivel');
+          $('#divNaoSuporta').addClass('divIFrameVisivel');   
+        }
+        else if (leitorJaConfigurouNotificacoes()) {
+          if (leitorNegouNotificacao()) {     
+            open("notificacao/oglobo_web_recadastro.html", '_self');
+	  }
+          else {
+	    open("notificacao/oglobo_web_obrigado.html", '_self');
+	  }
+        }
+        else {
 	   $('#divCadastrar').removeClass('divIFrameInvisivel');
           $('#divCadastrar').addClass('divIFrameVisivel');
 	   
      setTimeout(function() { subscrever(); }, 2000);
+	}
      });
   </script>
 </head>
