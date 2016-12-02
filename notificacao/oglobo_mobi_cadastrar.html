@@ -126,8 +126,9 @@
 			}
         </style>
         <script type="text/javascript">
-			window.onload = function() {
-				setTimeout(function () {
+		
+	function carregaMobi() {
+		setTimeout(function () {
 					document.querySelector('.notif').className += ' open';
 				}, 900);
 				if (!inIframe()) {
@@ -138,7 +139,9 @@
 				} else {
 					console.log('naotaiframe',inIframe());
 				}
-			};/**/
+	}
+		
+	window.onload = carregaMobi(); 
         </script>
     </head>
     <body>
