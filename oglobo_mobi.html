@@ -11,6 +11,26 @@
   <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async='async'></script>
   
   <script>
+	  var OneSignal = window.OneSignal || [];
+      OneSignal.push(["init", {
+      appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
+      autoRegister: true, /* Set to true to automatically prompt visitors */
+      welcomeNotification: {
+        title: "Notificações O GLOBO",
+        message: "Obrigado! Agora você será notificado sempre que houver notícias importantes para manter-se informado."
+      },
+      notifyButton: {
+        enable: false /* Set to false to hide */
+      }
+      }]);
+	  
+ 	OneSignal.once('subscriptionChange', function(isSubscribed) {
+      // This callback fires every time the event occurs
+	alert('aqui '+isSubscribed);
+      location.href = "notificacao/oglobo_mobi_cadastrar.html";
+    });
+	</script>
+	<script>
     var temporaryPermissionStatus = "";
 
     function navegadorSuportaNotificacao() {
@@ -74,8 +94,8 @@
     }
   
     function subscrever() {
-      inicializa();
-      polling("mobi");
+     // inicializa();
+      //polling("mobi");
     }
     
 	function getPermissaoLeitorNotificacaoNoSeguroOGlobo() { 
