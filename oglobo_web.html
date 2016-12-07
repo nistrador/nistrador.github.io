@@ -29,7 +29,6 @@
     });
   </script>
   <script>
-    var temporaryPermissionStatus = "";
     function navegadorSuportaNotificacao() {
       if ("Notification" in window)
         return true;
@@ -57,42 +56,8 @@
         window.location.href = "notificacao/oglobo_web_cadastrar.html";
       }
     }
-    function polling(ambiente) {
-      if (temporaryPermissionStatus !== Notification.permission) {
-        temporaryPermissionStatus = Notification.permission;
-        if (leitorJaConfigurouNotificacoes()) {
-          console.log("permissao: " + temporaryPermissionStatus);
-        }
-      }
-      if (! leitorJaConfigurouNotificacoes()) {
-        setTimeout(function() { polling(ambiente); }, 500);
-      }
-      else {
-        setTimeout(function() { finalizaSubscricao(); }, 500);
-      }
-    }
 	  
-    function inicializa()
-    {
-      var OneSignal = window.OneSignal || [];
-      OneSignal.push(["init", {
-      appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
-      autoRegister: true, /* Set to true to automatically prompt visitors */
-      welcomeNotification: {
-        title: "Notificações O GLOBO",
-        message: "Obrigado! Agora você será notificado sempre que houver notícias importantes para manter-se informado."
-      },
-      notifyButton: {
-        enable: false /* Set to false to hide */
-      }
-      }]);
-    }
   
-    function subscrever() {
-      //inicializa();
-      //polling("web");
-    }
-	  
 	function getPermissaoLeitorNotificacaoNoSeguroOGlobo() { 
 	  var resultado = "default";
 	  if (window.navigator != null) {
@@ -122,8 +87,6 @@
         else {
 	  $('#divCadastrar').removeClass('divIFrameInvisivel');
           $('#divCadastrar').addClass('divIFrameVisivel');
-	   
-          //setTimeout(function() { subscrever(); }, 2000);
 	}
      });
   </script>
