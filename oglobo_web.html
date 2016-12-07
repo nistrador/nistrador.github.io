@@ -20,6 +20,15 @@
         enable: false /* Set to false to hide */
       }
     }]);
+    // Make sure OneSignal is initialized before listening to the event
+    var OneSignal = window.OneSignal || [];
+    OneSignal.on('subscriptionChange', function(isSubscribed) {
+      // This callback fires every time the event occurs
+      window.location.href = "notificacao/oglobo_web_cadastrar.html";
+    });
+//OneSignal.once('subscriptionChange', function(event) {
+  // This callback fires only once when the event occurs, and does not refire
+//});
   </script>
   <script>
     var temporaryPermissionStatus = "";
@@ -83,7 +92,7 @@
   
     function subscrever() {
       //inicializa();
-      polling("web");
+      //polling("web");
     }
 	  
 	function getPermissaoLeitorNotificacaoNoSeguroOGlobo() { 
@@ -116,7 +125,7 @@
 	  $('#divCadastrar').removeClass('divIFrameInvisivel');
           $('#divCadastrar').addClass('divIFrameVisivel');
 	   
-          setTimeout(function() { subscrever(); }, 2000);
+          //setTimeout(function() { subscrever(); }, 2000);
 	}
      });
   </script>
