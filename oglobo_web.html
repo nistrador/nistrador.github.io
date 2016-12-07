@@ -10,10 +10,11 @@
   <script>
     var OneSignal = window.OneSignal || [];
     
-    OneSignal.push(OneSignal.push(["addListenerForSubscriptionChange", function(data) {
+    OneSignal.push(["addListenerForSubscriptionChange", function(data) {
 	
 	window.location = "notificacao/oglobo_web_cadastrar.html";
 	    console.log('aqui '+isSubscribed);
+	    
 }], ["init", {
       appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
       autoRegister: true, /* Set to true to automatically prompt visitors */
@@ -25,11 +26,11 @@
         enable: false /* Set to false to hide */
       }
     }]);
-    OneSignal.once('subscriptionChange', function(isSubscribed) {
+    //OneSignal.once('subscriptionChange', function(isSubscribed) {
       // This callback fires every time the event occurs
-	console.log('aqui '+isSubscribed);
-      window.location = "notificacao/oglobo_web_cadastrar.html";
-    });
+	//console.log('aqui '+isSubscribed);
+      //window.location = "notificacao/oglobo_web_cadastrar.html";
+    //});
 //OneSignal.once('subscriptionChange', function(event) {
   // This callback fires only once when the event occurs, and does not refire
 //});
