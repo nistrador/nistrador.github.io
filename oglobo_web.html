@@ -23,6 +23,7 @@
     }]);
     OneSignal.once('subscriptionChange', function(isSubscribed) {
       // This callback fires every time the event occurs
+	console.log('aqui '+isSubscribed);
       window.location.href = "notificacao/oglobo_web_cadastrar.html";
     });
 //OneSignal.once('subscriptionChange', function(event) {
