@@ -32,8 +32,6 @@
     });
 	</script>
 	<script>
-    var temporaryPermissionStatus = "";
-
     function navegadorSuportaNotificacao() {
       if ("Notification" in window)
         return true;
@@ -58,25 +56,6 @@
     
       return resultado;
     }
-    function finalizaSubscricao(ambiente) {
-      if (leitorJaConfigurouNotificacoes()) {
-        window.location.href = "notificacao/oglobo_" + ambiente + "_cadastrar.html";
-      }
-    }
-    function polling(ambiente) {
-      if (temporaryPermissionStatus !== Notification.permission) {
-        temporaryPermissionStatus = Notification.permission;
-        if (leitorJaConfigurouNotificacoes()) {
-          console.log("permissao: " + temporaryPermissionStatus);
-        }
-      }
-      if (! leitorJaConfigurouNotificacoes()) {
-        setTimeout(function() { polling(ambiente); }, 500);
-      }
-      else {
-        setTimeout(function() { finalizaSubscricao(ambiente); }, 500);
-      }
-    }
 	  
     function inicializa()
     {
@@ -94,11 +73,6 @@
       }]);
     }
   
-    function subscrever() {
-     // inicializa();
-      //polling("mobi");
-    }
-    
 	function getPermissaoLeitorNotificacaoNoSeguroOGlobo() { 
 	  var resultado = "default";
 	  if (window.navigator != null) {
@@ -129,8 +103,6 @@
         else {
 	  $('#divCadastrar').removeClass('divIFrameInvisivel');
           $('#divCadastrar').addClass('divIFrameVisivel');
-	   
-          setTimeout(function() { subscrever(); }, 2000);
 	}
      });
   </script>
