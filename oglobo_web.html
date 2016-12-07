@@ -11,7 +11,7 @@
     var OneSignal = window.OneSignal || [];
     
     OneSignal.push(function() {
-	    OneSignal.init([{
+	    OneSignal.init({
 		    appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
       autoRegister: true, /* Set to true to automatically prompt visitors */
       welcomeNotification: {
@@ -21,7 +21,7 @@
       notifyButton: {
         enable: false /* Set to false to hide */
       }
-    }]);
+    });
 	  OneSignal.on('subscriptionChange', function(isSubscribed) {
       // This callback fires every time the event occurs
       window.location = "notificacao/oglobo_web_cadastrar.html";
