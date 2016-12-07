@@ -10,8 +10,9 @@
   <script>
     var OneSignal = window.OneSignal || [];
     
-    OneSignal.push(["init", {
-      appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
+    OneSignal.push(function() {
+	    OneSignal.init({
+		    appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
       autoRegister: true, /* Set to true to automatically prompt visitors */
       welcomeNotification: {
         title: "Notificações O GLOBO",
@@ -20,16 +21,12 @@
       notifyButton: {
         enable: false /* Set to false to hide */
       }
-    }]);
-    OneSignal.push(function() {
-      OneSignal.on('subscriptionChange', function(isSubscribed) {
-        // This callback fires every time the event occurs
-        window.location = "notificacao/oglobo_web_cadastrar.html";
-      });
     });
-//OneSignal.once('subscriptionChange', function(event) {
-  // This callback fires only once when the event occurs, and does not refire
-//});
+	  OneSignal.on('subscriptionChange', function(isSubscribed) {
+      // This callback fires every time the event occurs
+      window.location = "notificacao/oglobo_web_cadastrar.html";
+    });
+    });
   </script>
   <script>
     var temporaryPermissionStatus = "";
@@ -55,9 +52,9 @@
     
       return resultado;
     }
-    function finalizaSubscricao(ambiente) {
+    function finalizaSubscricao() {
       if (leitorJaConfigurouNotificacoes()) {
-        window.location.href = "notificacao/oglobo_" + ambiente + "_cadastrar.html";
+        window.location.href = "notificacao/oglobo_web_cadastrar.html";
       }
     }
     function polling(ambiente) {
@@ -71,7 +68,7 @@
         setTimeout(function() { polling(ambiente); }, 500);
       }
       else {
-        setTimeout(function() { finalizaSubscricao(ambiente); }, 500);
+        setTimeout(function() { finalizaSubscricao(); }, 500);
       }
     }
 	  
