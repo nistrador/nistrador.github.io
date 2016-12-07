@@ -1,101 +1,96 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Notificações O GLOBO</title>
-  
-  <link rel="manifest" href="/manifest.json">
-  <link rel="stylesheet" type="text/css" href="notificacao/css/index_oglobo.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
-  <script>
-    var OneSignal = window.OneSignal || [];
+	<title>Notificações O GLOBO</title>
+	<link rel="manifest" href="/manifest.json">
+	<link rel="stylesheet" type="text/css" href="notificacao/css/index_oglobo.css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async></script>
+	<script>
+	var OneSignal = window.OneSignal || [];
     
-    OneSignal.push(function() {
-	    OneSignal.init({
-		    appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
-      autoRegister: true, /* Set to true to automatically prompt visitors */
-      welcomeNotification: {
-        title: "Notificações O GLOBO",
-        message: "Obrigado! Agora você será notificado sempre que houver notícias importantes para manter-se informado."
-      },
-      notifyButton: {
-        enable: false /* Set to false to hide */
-      }
-    });
-	  OneSignal.on('subscriptionChange', function(isSubscribed) {
-      // This callback fires every time the event occurs
-      window.location = "notificacao/oglobo_web_cadastrar.html";
-    });
-    });
-  </script>
-  <script>
-    function navegadorSuportaNotificacao() {
-      if ("Notification" in window)
-        return true;
-      else
-        return false;
-    }
-    function leitorJaConfigurouNotificacoes() {
-      if (navegadorSuportaNotificacao()) {
-        if (Notification.permission !== "default")
-          return true;
-      }
-      return false;
-    }
-    function leitorIraVisualizarModalNovamente() {
-      var resultado = true;
-      if (! navegadorSuportaNotificacao())
-        resultado = false;
-      if (leitorJaConfigurouNotificacoes())
-        resultado = false;
-    
-      return resultado;
-    }
-  
+	OneSignal.push(function() {
+		OneSignal.init({
+			appId: "b4d189a8-3ad8-497b-93ec-b50bfa590a8e",
+			autoRegister: true, /* Set to true to automatically prompt visitors */
+			welcomeNotification: {
+				title: "Notificações O GLOBO",
+				message: "Obrigado! Agora você será notificado sempre que houver notícias importantes para manter-se informado."
+			},
+			notifyButton: {
+				enable: false /* Set to false to hide */
+			}
+		});
+		OneSignal.on('subscriptionChange', function(isSubscribed) {
+		// This callback fires every time the event occurs
+			window.location = "notificacao/oglobo_web_cadastrar.html";
+		});
+	});
+	</script>
+	<script>
+	function navegadorSuportaNotificacao() {
+		if ("Notification" in window)
+			return true;
+		else
+			return false;
+	}
+	function leitorJaConfigurouNotificacoes() {
+		if (navegadorSuportaNotificacao()) {
+			if (Notification.permission !== "default")
+	  			return true;
+		}
+		return false;
+	}
+	function leitorIraVisualizarModalNovamente() {
+		var resultado = true;
+		if (! navegadorSuportaNotificacao())
+			resultado = false;
+		if (leitorJaConfigurouNotificacoes())
+			resultado = false;
+		return resultado;
+	}
 	function getPermissaoLeitorNotificacaoNoSeguroOGlobo() { 
-	  var resultado = "default";
-	  if (window.navigator != null) {
-	    if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined') {
-	      resultado = Notification.permission;
-	    }		
-	  }
-	  return resultado;
+		var resultado = "default";
+		if (window.navigator != null) {
+			if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined') {
+				resultado = Notification.permission;
+			}		
+	  	}
+		return resultado;
 	}
 	function leitorNegouNotificacao() {
-	  return "denied" === getPermissaoLeitorNotificacaoNoSeguroOGlobo();
+		return "denied" === getPermissaoLeitorNotificacaoNoSeguroOGlobo();
 	}
-    
-   $(function() {
-	if (! navegadorSuportaNotificacao()) {
-          $('#divNaoSuporta').removeClass('divIFrameInvisivel');
-          $('#divNaoSuporta').addClass('divIFrameVisivel');   
-        }
-        else if (leitorJaConfigurouNotificacoes()) {
-          if (leitorNegouNotificacao()) {     
-            open("notificacao/oglobo_web_recadastro.html", '_self');
-	  }
-          else {
-	    open("notificacao/oglobo_web_obrigado.html", '_self');
-	  }
-        }
-        else {
-	  $('#divCadastrar').removeClass('divIFrameInvisivel');
-          $('#divCadastrar').addClass('divIFrameVisivel');
-	}
-     });
-  </script>
+
+	$(function() {
+		if (! navegadorSuportaNotificacao()) {
+		  $('#divNaoSuporta').removeClass('divIFrameInvisivel');
+		  $('#divNaoSuporta').addClass('divIFrameVisivel');   
+		}
+		else if (leitorJaConfigurouNotificacoes()) {
+			if (leitorNegouNotificacao()) {     
+				open("notificacao/oglobo_web_recadastro.html", '_self');
+			}
+			else {
+				open("notificacao/oglobo_web_obrigado.html", '_self');
+			  }
+		}
+		else {
+			$('#divCadastrar').removeClass('divIFrameInvisivel');
+			$('#divCadastrar').addClass('divIFrameVisivel');
+		}
+	});
+	</script>
 </head>
-
 <body>
-<div id="divNaoSuporta" class="divIFrameInvisivel">
-      <p align="center">Notificações não são suportadas no seu navegador.</p>
-    </div>
-    <div id="divCadastrar" class="divIFrameInvisivel">
-      <iframe src="notificacao/oglobo_web_cadastrar.html" class="fullScreen"></iframe>
-    </div>
+	<div id="divNaoSuporta" class="divIFrameInvisivel">
+      		<p align="center">Notificações não são suportadas no seu navegador.</p>
+	</div>
+	<div id="divCadastrar" class="divIFrameInvisivel">
+		<iframe src="notificacao/oglobo_web_cadastrar.html" class="fullScreen"></iframe>
+	</div>
 	<script>
-      document.write('<img src="http://globostg.globoi.com/pushNotification.do?exibeModal=' + leitorIraVisualizarModalNovamente() + '" style="display:none"  />');
-    </script>
+	document.write('<img src="http://globostg.globoi.com/pushNotification.do?exibeModal=' + leitorIraVisualizarModalNovamente() + '" style="display:none"  />');
+	</script>
 </body>
-
 </html>
