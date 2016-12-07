@@ -10,7 +10,7 @@
   <script>
     var OneSignal = window.OneSignal || [];
     
-    OneSignal.push(["addListenerForSubscriptionChange", function(data) {
+    OneSignal.push(["addListenerForSubscriptionChange", function(isSubscribed) {
 	
 	window.location = "notificacao/oglobo_web_cadastrar.html";
 	    console.log('aqui '+isSubscribed);
