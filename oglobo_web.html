@@ -30,10 +30,14 @@
 		});
 		//teste para pegar bloqueio de notificacao
 		OneSignal.on('notificationPermissionChange', function(permissionChange) {
-			console.log('aqui2');
-                       var currentPermission = permissionChange.to;
-   		 	console.log('New permission state:', currentPermission);
-			window.location = "notificacao/oglobo_web_cadastrar.html";
+			
+			var currentPermission = permissionChange.to;
+			console.log('New permission state:', currentPermission);
+			if (currentPermission === 'denied'){
+                       		console.log('aqui2');
+				window.location = "notificacao/oglobo_web_cadastrar.html";
+			}
+			
   		});
 	});
 	</script>
