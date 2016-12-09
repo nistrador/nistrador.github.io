@@ -25,10 +25,12 @@
 		});
 		OneSignal.on('subscriptionChange', function(isSubscribed) {
 		// This callback fires every time the event occurs
+			console.log('aqui');
 			window.location = "notificacao/oglobo_web_cadastrar.html";
 		});
 		//teste para pegar bloqueio de notificacao
 		OneSignal.on('notificationPermissionChange', function(permissionChange) {
+			console.log('aqui2');
                        var currentPermission = permissionChange.to;
    		 	console.log('New permission state:', currentPermission);
 			window.location = "notificacao/oglobo_web_cadastrar.html";
