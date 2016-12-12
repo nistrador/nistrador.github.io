@@ -28,6 +28,17 @@
 		// This callback fires every time the event occurs
 			window.location = "notificacao/oglobo_mobi_cadastrar.html";
 		});
+		//verificacao para pegar bloqueio de notificacao
+		OneSignal.on('notificationPermissionChange', function(permissionChange) {
+			
+			var currentPermission = permissionChange.to;
+			console.log('New permission state:', currentPermission);
+			if (currentPermission === 'denied'){
+                       		console.log('aqui2');
+				window.location = "notificacao/oglobo_mobi_cadastrar.html";
+			}
+			
+  		});
 	});
 	</script>
 	<script>
