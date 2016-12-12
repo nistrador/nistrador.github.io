@@ -2,66 +2,66 @@
 
 @font-face {
     font-family: 'OgloboCondensed';
-    src: url('http://oglobo.globo.com/font/OgloboCondensedBold.eot');
-    src: url('http://oglobo.globo.com/font/OgloboCondensedBold.eot?#iefix') format('embedded-opentype'),
-         url('http://oglobo.globo.com/font/OgloboCondensedBold.woff?#iefix') format('woff'),
-         url('http://oglobo.globo.com/font/OgloboCondensedBold.ttf?#iefix') format('truetype'),
-         url('http://oglobo.globo.com/font/OgloboCondensedBold.svg#oglobocondensedbold?#iefix') format('svg');
+    src: url('OgloboCondensedBold.eot');
+    src: url('OgloboCondensedBold.eot?#iefix') format('embedded-opentype'),
+         url('OgloboCondensedBold.woff?#iefix') format('woff'),
+         url('OgloboCondensedBold.ttf?#iefix') format('truetype'),
+         url('OgloboCondensedBold.svg#oglobocondensedbold?#iefix') format('svg');
     font-weight: 800;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'OgloboCondensed';
-    src: url('http://oglobo.globo.com/font/OgloboCondensedSemibold.eot');
-    src: url('http://oglobo.globo.com/font/OgloboCondensedSemibold.eot?#iefix') format('embedded-opentype'),
-         url('http://oglobo.globo.com/font/OgloboCondensedSemibold.woff?#iefix') format('woff'),
-         url('http://oglobo.globo.com/font/OgloboCondensedSemibold.ttf?#iefix') format('truetype'),
-         url('http://oglobo.globo.com/font/OgloboCondensedSemibold.svg#oglobocondensedsemibold?#iefix') format('svg');
+    src: url('OgloboCondensedSemibold.eot');
+    src: url('OgloboCondensedSemibold.eot?#iefix') format('embedded-opentype'),
+         url('OgloboCondensedSemibold.woff?#iefix') format('woff'),
+         url('OgloboCondensedSemibold.ttf?#iefix') format('truetype'),
+         url('OgloboCondensedSemibold.svg#oglobocondensedsemibold?#iefix') format('svg');
     font-weight: 700;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'OgloboCondensed';
-    src: url('http://oglobo.globo.com/font/OgloboCondensedMedium.eot');
-    src: url('http://oglobo.globo.com/font/OgloboCondensedMedium.eot?#iefix') format('embedded-opentype'),
-         url('http://oglobo.globo.com/font/OgloboCondensedMedium.woff?#iefix') format('woff'),
-         url('http://oglobo.globo.com/font/OgloboCondensedMedium.ttf?#iefix') format('truetype'),
-         url('http://oglobo.globo.com/font/OgloboCondensedMedium.svg#oglobocondensedmedium?#iefix') format('svg');
+    src: url('OgloboCondensedMedium.eot');
+    src: url('OgloboCondensedMedium.eot?#iefix') format('embedded-opentype'),
+         url('OgloboCondensedMedium.woff?#iefix') format('woff'),
+         url('OgloboCondensedMedium.ttf?#iefix') format('truetype'),
+         url('OgloboCondensedMedium.svg#oglobocondensedmedium?#iefix') format('svg');
     font-weight: 600;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'OgloboCondensed';
-    src: url('http://oglobo.globo.com/font/OgloboCondensedRegular.eot');
-    src: url('http://oglobo.globo.com/font/OgloboCondensedRegular.eot?#iefix') format('embedded-opentype'),
-         url('http://oglobo.globo.com/font/OgloboCondensedRegular.woff?#iefix') format('woff'),
-         url('http://oglobo.globo.com/font/OgloboCondensedRegular.ttf?#iefix') format('truetype'),
-         url('http://oglobo.globo.com/font/OgloboCondensedRegular.svg#oglobocondensedregular?#iefix') format('svg');
+    src: url('OgloboCondensedRegular.eot');
+    src: url('OgloboCondensedRegular.eot?#iefix') format('embedded-opentype'),
+         url('OgloboCondensedRegular.woff?#iefix') format('woff'),
+         url('OgloboCondensedRegular.ttf?#iefix') format('truetype'),
+         url('OgloboCondensedRegular.svg#oglobocondensedregular?#iefix') format('svg');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'OgloboCondensed';
-    src: url('http://oglobo.globo.com/font/OgloboCondensedLight.eot');
-    src: url('http://oglobo.globo.com/font/OgloboCondensedLight.eot?#iefix') format('embedded-opentype'),
-         url('http://oglobo.globo.com/font/OgloboCondensedLight.woff?#iefix') format('woff'),
-         url('http://oglobo.globo.com/font/OgloboCondensedLight.ttf?#iefix') format('truetype'),
-         url('http://oglobo.globo.com/font/OgloboCondensedLight.svg#oglobocondensedlight?#iefix') format('svg');
+    src: url('OgloboCondensedLight.eot');
+    src: url('OgloboCondensedLight.eot?#iefix') format('embedded-opentype'),
+         url('OgloboCondensedLight.woff?#iefix') format('woff'),
+         url('OgloboCondensedLight.ttf?#iefix') format('truetype'),
+         url('OgloboCondensedLight.svg#oglobocondensedlight?#iefix') format('svg');
     font-weight: 300;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'OgloboXCondensed';
-    src: url('http://oglobo.globo.com/font/OgloboXCondensedLight.eot');
-    src: url('http://oglobo.globo.com/font/OgloboXCondensedLight.eot?#iefix') format('embedded-opentype'),
-         url('http://oglobo.globo.com/font/OgloboXCondensedLight.woff?#iefix') format('woff'),
-         url('http://oglobo.globo.com/font/OgloboXCondensedLight.ttf?#iefix') format('truetype'),
-         url('http://oglobo.globo.com/font/OgloboXCondensedLight.svg#ogloboxcondensedlight?#iefix') format('svg');
+    src: url('OgloboXCondensedLight.eot');
+    src: url('OgloboXCondensedLight.eot?#iefix') format('embedded-opentype'),
+         url('OgloboXCondensedLight.woff?#iefix') format('woff'),
+         url('OgloboXCondensedLight.ttf?#iefix') format('truetype'),
+         url('OgloboXCondensedLight.svg#ogloboxcondensedlight?#iefix') format('svg');
     font-weight: 300;
     font-style: normal;
 }
