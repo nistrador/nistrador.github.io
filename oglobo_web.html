@@ -50,6 +50,8 @@
 	}
 	function leitorJaConfigurouNotificacoes() {
 		if (navegadorSuportaNotificacao()) {
+			console.log('navegadorSuportaNotificacao: '+navegadorSuportaNotificacao());
+			console.log('Notification.permission:'+ Notification.permission);
 			if (Notification.permission !== "default")
 	  			return true;
 		}
@@ -57,10 +59,13 @@
 	}
 	function leitorIraVisualizarModalNovamente() {
 		var resultado = true;
+		console.log('navegadorSuportaNotificacao: '+navegadorSuportaNotificacao());
+		console.log('leitorJaConfigurouNotificacoes: '+leitorJaConfigurouNotificacoes());
 		if (! navegadorSuportaNotificacao())
 			resultado = false;
 		if (leitorJaConfigurouNotificacoes())
 			resultado = false;
+		console.log('resultado: '+resultado);
 		return resultado;
 	}
 	function getPermissaoLeitorNotificacaoNoSeguroOGlobo() { 
@@ -72,9 +77,12 @@
 			}
 			//}		
 	  	}
+		console.log('Notification.permission: '+ Notification.permission)
+		console.log('resultado2: '+resultado);
 		return resultado;
 	}
 	function leitorNegouNotificacao() {
+		console.log('getPermissaoLeitorNotificacaoNoSeguroOGlobo '+getPermissaoLeitorNotificacaoNoSeguroOGlobo())
 		return "denied" === getPermissaoLeitorNotificacaoNoSeguroOGlobo();
 	}
 
@@ -84,14 +92,18 @@
 		  $('#divNaoSuporta').addClass('divIFrameVisivel');   
 		}
 		else if (leitorJaConfigurouNotificacoes()) {
-			if (leitorNegouNotificacao()) {     
+			console.log('leitorNegouNotificacao '+leitorNegouNotificacao());
+			if (leitorNegouNotificacao()) {
+				console.log('recadastro';
 				open("notificacao/oglobo_web_recadastro.html", '_self');
 			}
 			else {
+				console.log('obriagado');
 				open("notificacao/oglobo_web_obrigado.html", '_self');
 			  }
 		}
 		else {
+			console.log('cadastrar');
 			$('#divCadastrar').removeClass('divIFrameInvisivel');
 			$('#divCadastrar').addClass('divIFrameVisivel');
 		}
