@@ -69,7 +69,7 @@
 	function getPermissaoLeitorNotificacaoNoSeguroOGlobo() { 
 		var resultado = "default";
 		if (window.navigator != null) {
-			if (navigator.serviceWorker != null && navigator.serviceWorker != 'undefined') {
+			if (Notification != null && Notification != 'undefined') {
 				resultado = Notification.permission;
 			}		
 		}
